@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Eventos IIA</title>
+<meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no'/>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <h1 id="b" data-nempleado="2023630001" data-curp="ABCD123456EFGHIJ78">Eventos</h1>
+</body>
+<script>
+  let miH1 = document.querySelector("h1#b");
+  miH1.addEventListener("click",function(){
+    let ne = this.getAttribute("data-nempleado");
+    let curp = this.getAttribute("data-curp");
+    console.log("Hola H1, NE = " + ne + " CURP: " + curp);
+  });
+
+
+
+</script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Objetos JS</title>
+<meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no'/>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script>
+  const auto = {
+    marca:"VW",
+    modelo:"Jetta",
+    año:2023,
+    km:2345,
+    gasolina:"premium",
+    puerta:5,
+    color:"rojo",
+    getInfo:function(){
+      return this.marca + " " + this.color;
+    },
+    getMaxVel:function(){
+      return "El kilometraje máximo: "+this.km;
+    }
+  };
+
+  const otroAuto = {marca:"Ford", modelo:"Escape", año:2022, km:23567, gasolina:"hibrido", puertas:5, color:"azul",getInfo:function(){return "Este es un "+this.marca+" de modelo "+this.modelo+" del año "+this.año+" color "+this.color+" con "+this.km+" kilometro recorridos";},getInfoParam:function(g){return "Las fuerza G que soporte este "+this.marca+" son de "+g;}}
+
+  //otroAuto.año = 2020;
+
+  console.log(auto.marca);
+  console.log(otroAuto.color);
+  console.log("El auto "+auto.marca+" es de color "+auto.color);
+  console.log("El auto "+otroAuto.marca+" es un modelo "+otroAuto.modelo+" del año "+otroAuto.año)
+  console.log(auto.getInfo());
+  console.log(auto.getMaxVel());
+  console.log(otroAuto.getInfo());
+  console.log(otroAuto.getInfoParam(9.82));
+
+
+
+
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>DOM 2 - IIA</title>
+<meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no'/>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+  .estilo{
+    background-color: blue;
+    color:white;
+    font-family: verdana;
+  }
+</style>
+</head>
+<body>
+  <h3 id="click">Haz click</h3>
+  <h1 id="c">Para eliminar</h1>
+  <div id="b"></div>
+  <div id="e">
+    <p>Es el Div 'e'</p>
+  </div>
+</body>
+<script>
+  let etiqueta = document.createElement("p");
+  let contenido = document.createTextNode("Hola IIA 24042023");
+  etiqueta.appendChild(contenido);
+  //document.body.appendChild(etiqueta);
+  let miDivE = document.querySelector("div#e");
+  miDivE.appendChild(etiqueta);
+
+  /* No está permitido el suicidio en DOM */
+  //let miH1 = document.querySelector("h1#c");
+  //miH1.removeChild(miH1);
+  /* ************************************ */
+
+  let miH1 = document.querySelector("h1#c");
+  document.body.removeChild(miH1);
+
+  miDivE.removeChild(etiqueta);
+
+
+  let miH2 = document.createElement("h2");
+  let cont2 = document.createTextNode("Esto es un H2 hecho con DOM");
+  miH2.appendChild(cont2);
+  miH2.classList.add("estilo");
+  console.log(miH2.classList);
+
+  document.body.appendChild(miH2);
+
+  console.log(document.doctype);
+
+  let miH3 = document.querySelector("h3#click");
+  /* 
+  miH3.onclick = function(){
+    console.log("Se hizo click en H3");
+  }
+  */
+
+  miH3.addEventListener("click",()=>{
+    console.log("Evento con addEventListener");
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>
