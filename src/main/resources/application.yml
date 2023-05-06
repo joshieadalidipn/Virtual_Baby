@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://localhost:3306/Virtual_Baby
+    username: root
+    password: root
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQLDialect
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+      type:
+        descriptor:
+          sql:
+            BasicBinder: TRACE
