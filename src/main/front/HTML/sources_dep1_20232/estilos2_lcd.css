@@ -1,0 +1,27 @@
+a:hover{
+  background-color: black;
+}
+
+a[target="_blank"]{
+  color:gold;
+}
+
+[target="_self"]{
+  color:burlywood;
+}
+
+[target="_parent"]{
+  color:blue;
+}
+
+/*
+p:hover{
+  font-size: 40pt;
+}
+*/
+
+p::before{
+  content: "LCD_LCD_LCD_LCD_LCD_LCD_LCD_LCD_";
+  color:blue;
+  font-size: smaller;
+}

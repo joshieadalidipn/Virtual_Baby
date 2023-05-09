@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>DOM - IIA</title>
+<meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no'/>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+
+</head>
+<body>
+  <p id="hola">Hola Mundo</p>
+  <p id="bienvenido">Bienvenidos</p>
+  <h1 id="escuela">ESCOM - IPN</h1>
+  <h2 id="carrera">IIA</h2>
+  <a id="enlace" href="https://www.escom.ipn.mx">Web de ESCOM</a>
+</body>
+<script>
+  let miJSON = '{"nombre":"Jose Antonio Ortiz Ramirez"}';
+  let miObj = JSON.parse(miJSON);
+  let escuela = document.getElementById("escuela");
+  escuela.innerText = miObj.nombre;
+
+
+
+
+
+
+
+
+  
+  //alert(escuela.innerText);
+  let pes = document.getElementsByTagName("p");
+  //console.log(pes[0].innerText);
+  let idBienvenido = document.querySelector("h2#carrera");
+  idBienvenido.style = "color:red; font-family:verdana;";
+  //console.log(idBienvenido.innerText);
+  let enlace = document.querySelector("a#enlace");
+  enlace.href = "https://www.upiita.ipn.mx";
+  
+
+
+
+
+
+
+</script>
+</html>
