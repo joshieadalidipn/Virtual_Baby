@@ -1,23 +1,28 @@
 spring:
   datasource:
-    url: jdbc:mariadb://localhost:3306/Virtual_Baby
-    username: root
+    url: jdbc:postgresql://localhost:5432/virtual_baby
+    username: postgres
     password: root
-    driver-class-name: org.mariadb.jdbc.Driver
+    driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     show-sql: true
     properties:
       hibernate:
         format_sql: true
-    database: mysql
-    database-platform: org.hibernate.dialect.MySQLDialect
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
 logging:
   level:
     org:
       hibernate:
         SQL: DEBUG
+      springframework:
+        web: INFO
+    com:
+      virtual:
+        virtualbaby: DEBUG
       type:
         descriptor:
           sql:
