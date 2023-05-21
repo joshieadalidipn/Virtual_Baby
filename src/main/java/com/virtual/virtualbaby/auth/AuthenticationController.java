@@ -1,6 +1,6 @@
 package com.virtual.virtualbaby.auth;
 
-import com.virtual.virtualbaby.user.Usuario;
+import com.virtual.virtualbaby.entities.Usuario;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

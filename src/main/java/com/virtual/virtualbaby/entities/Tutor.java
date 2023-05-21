@@ -1,5 +1,6 @@
-package com.virtual.virtualbaby.user;
+package com.virtual.virtualbaby.entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
@@ -18,8 +19,12 @@ import java.time.LocalDate;
 @Table(name = "tutor")
 @PrimaryKeyJoinColumn(referencedColumnName = "id_usuario")
 public class Tutor extends Usuario {
-    private LocalDate fecha_bautizo;
-    private String telefono_trabajo;
-    private String domicilio_trabajo;
+    @Column(name = "fecha_bautizo")
+    private LocalDate fechaBautizo;
+    @Column(name = "telefono_trabajo")
+    private String telefonoTrabajo;
+    @Column(name = "domicilio_trabajo")
+    private String domicilioTrabajo;
+    @Column(name = "foto")
     private String foto;
 }

@@ -1,8 +1,8 @@
 package com.virtual.virtualbaby.controller;
 
-import com.virtual.virtualbaby.user.Tutor;
-import com.virtual.virtualbaby.user.TutorRepository;
-import com.virtual.virtualbaby.user.UsuarioRepository;
+import com.virtual.virtualbaby.entities.Tutor;
+import com.virtual.virtualbaby.entities.TutorRepository;
+import com.virtual.virtualbaby.entities.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;

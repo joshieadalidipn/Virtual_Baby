@@ -1,6 +1,5 @@
 package com.virtual.virtualbaby.config;
 
-import com.virtual.virtualbaby.user.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

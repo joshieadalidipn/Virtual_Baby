@@ -1,5 +1,8 @@
 package com.virtual.virtualbaby.user;
 
+import com.virtual.virtualbaby.entities.TutorRepository;
+import com.virtual.virtualbaby.entities.Usuario;
+import com.virtual.virtualbaby.entities.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +19,7 @@ public class UsuarioService {
 
     public List<Role> getRoles(Usuario usuario) {
         List<Role> roles = new ArrayList<>();
-        Integer id = usuario.getId_usuario();
+        Integer id = usuario.getIdUsuario();
 
         if (usuarioRepository.existsById(id)){
             roles.add(Role.ROLE_USUARIO);

@@ -1,9 +1,9 @@
 package com.virtual.virtualbaby.auth;
 
 import com.virtual.virtualbaby.config.JwtService;
-import com.virtual.virtualbaby.user.Usuario;
+import com.virtual.virtualbaby.entities.Usuario;
 import com.virtual.virtualbaby.user.UsuarioDetailsService;
-import com.virtual.virtualbaby.user.UsuarioRepository;
+import com.virtual.virtualbaby.entities.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

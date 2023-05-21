@@ -1,4 +1,4 @@
-package com.virtual.virtualbaby.user;
+package com.virtual.virtualbaby.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -19,25 +19,25 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_usuario")
-    private Integer id_usuario;
+    private Integer idUsuario;
 
     @Column(name = "nombre_usuario")
-    private String nombre_usuario;
+    private String nombreUsuario;
 
     @Column(name = "primer_apellido")
-    private String primer_apellido;
+    private String primerApellido;
 
     @Column(name = "segundo_apellido")
-    private String segundo_apellido;
+    private String segundoApellido;
 
     @Column(name = "email")
     private String email;
 
     @Column(name = "telefono_casa")
-    private String telefono_casa;
+    private String telefonoCasa;
 
     @Column(name = "telefono_celular")
-    private String telefono_celular;
+    private String telefonoCelular;
 
     @Column(name = "password")
     private String password;
@@ -55,23 +55,23 @@ public class Usuario {
     private String sexo;
 
     @Column(name = "fecha_nacimiento")
-    private LocalDate fecha_nacimiento;
+    private LocalDate fechaNacimiento;
 
     @Override
     public String toString() {
         return """
-                Usuario{id_usuario=%d,
-                nombre_usuario='%s',
-                primer_apellido='%s',
-                segundo_apellido='%s',
+                Usuario{idUsuario=%d,
+                nombreUsuario='%s',
+                primerApellido='%s',
+                segundoApellido='%s',
                 email='%s',
-                telefono_casa='%s',
-                telefono_celular='%s',
+                telefonoCasa='%s',
+                telefonoCelular='%s',
                 password='%s',
                 rfc='%s',
                 domicilio='%s',
                 curp='%s',
                 sexo='%s',
-                fecha_nacimiento=%s}""".formatted(id_usuario, nombre_usuario, primer_apellido, segundo_apellido, email, telefono_casa, telefono_celular, password, rfc, domicilio, curp, sexo, fecha_nacimiento);
+                fechaNacimiento=%s}""".formatted(idUsuario, nombreUsuario, primerApellido, segundoApellido, email, telefonoCasa, telefonoCelular, password, rfc, domicilio, curp, sexo, fechaNacimiento);
     }
 }

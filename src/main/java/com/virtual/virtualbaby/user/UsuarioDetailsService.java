@@ -1,5 +1,7 @@
 package com.virtual.virtualbaby.user;
 
+import com.virtual.virtualbaby.entities.Usuario;
+import com.virtual.virtualbaby.entities.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -9,7 +11,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -24,13 +25,13 @@ public class UsuarioDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<Usuario> usuario = usuarioRepository.findUsuarioByEmail(username);
-        if (usuario.isEmpty()) {
-            throw new UsernameNotFoundException("User not found: " + username);
-        }
-        List<Role> roles = usuarioService.getRoles(usuario.get());
-        return new User(usuario.get().getEmail(), usuario.get().getPassword(), toSimpleGrantedAuthorities(roles));
+        Usuario usuario = usuarioRepository.findUsuarioByEmail(username)
+                .orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado: " + username));
+
+        List<Role> roles = usuarioService.getRoles(usuario);
+        return new User(usuario.getEmail(), usuario.getPassword(), toSimpleGrantedAuthorities(roles));
     }
+
 
     public UserDetails fromUsuario(Usuario usuario) {
         List<Role> roles = usuarioService.getRoles(usuario);
