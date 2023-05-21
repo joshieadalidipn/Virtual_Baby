@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 import java.time.LocalDate;
 
 @Data
@@ -55,4 +56,22 @@ public class Usuario {
 
     @Column(name = "fecha_nacimiento")
     private LocalDate fecha_nacimiento;
+
+    @Override
+    public String toString() {
+        return """
+                Usuario{id_usuario=%d,
+                nombre_usuario='%s',
+                primer_apellido='%s',
+                segundo_apellido='%s',
+                email='%s',
+                telefono_casa='%s',
+                telefono_celular='%s',
+                password='%s',
+                rfc='%s',
+                domicilio='%s',
+                curp='%s',
+                sexo='%s',
+                fecha_nacimiento=%s}""".formatted(id_usuario, nombre_usuario, primer_apellido, segundo_apellido, email, telefono_casa, telefono_celular, password, rfc, domicilio, curp, sexo, fecha_nacimiento);
+    }
 }

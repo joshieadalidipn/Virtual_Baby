@@ -1,100 +1,100 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Virtual Baby - Inicio de sesión</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #F0F8FF;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Virtual Baby - Inicio de sesión</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F0F8FF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
 
-    .login-container {
-      background-color: #FFF;
-      padding: 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      width: 100%;
-      max-width: 400px;
-    }
+        .login-container {
+            background-color: #FFF;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
 
-    h1 {
-      text-align: center;
-      color: #6b5b95;
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
+        h1 {
+            text-align: center;
+            color: #6b5b95;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
 
-    label {
-      display: block;
-      font-weight: bold;
-      margin-top: 1rem;
-    }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
 
-    input[type="email"],
-    input[type="password"] {
-      width: 100%;
-      padding: 0.5rem;
-      font-size: 1rem;
-      border-radius: 0.5rem;
-      border: 1px solid #ccc;
-    }
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 0.5rem;
+            font-size: 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid #ccc;
+        }
 
-    button {
-      background-color: #6b5b95;
-      color: #FFF;
-      font-weight: bold;
-      font-size: 1rem;
-      padding: 0.5rem 1rem;
-      border-radius: 0.5rem;
-      border: none;
-      cursor: pointer;
-      display: block;
-      margin: 1rem auto;
-    }
-  </style>
+        button {
+            background-color: #6b5b95;
+            color: #FFF;
+            font-weight: bold;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            display: block;
+            margin: 1rem auto;
+        }
+    </style>
 </head>
 <body>
-  <div class="login-container">
+<div class="login-container">
     <h1>Virtual Baby</h1>
     <form id="login-form">
-      <label for="email">Correo electrónico</label>
-      <input type="email" id="email" required>
-      <label for="password">Contraseña</label>
-      <input type="password" id="password" required>
-      <button type="submit">Iniciar sesión</button>
+        <label for="email">Correo electrónico</label>
+        <input id="email" required type="email">
+        <label for="password">Contraseña</label>
+        <input id="password" required type="password">
+        <button type="submit">Iniciar sesión</button>
     </form>
-  </div>
-  <script>
+</div>
+<script>
     document.getElementById("login-form").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
+        e.preventDefault();
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
 
-      const response = await fetch('/auth/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ email, password })
-      });
+        const response = await fetch('/auth/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({email, password})
+        });
 
-      if (response.ok) {
-        const data = await response.json();
-        localStorage.setItem('authToken', data.token);
-        alert('Registro exitoso. Bienvenido a Virtual Baby!');
-        // Redirige a la página principal de la guardería
-        window.location.href = '/session/demo';
-      } else {
-        alert('Error en el registro. Por favor, inténtalo de nuevo.');
-      }
+        if (response.ok) {
+            const data = await response.json();
+            localStorage.setItem('authToken', data.token);
+            alert('Registro exitoso. Bienvenido a Virtual Baby!');
+            // Redirige a la página principal de la guardería
+            window.location.href = '/session/demo';
+        } else {
+            alert('Error en el registro. Por favor, inténtalo de nuevo.');
+        }
     });
-  </script>
+</script>
 </body>
 </html>

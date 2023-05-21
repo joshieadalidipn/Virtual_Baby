@@ -10,11 +10,17 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+
 @Service
 @RequiredArgsConstructor
 public class UsuarioDetailsService implements UserDetailsService {
     private final UsuarioRepository usuarioRepository;
     private final UsuarioService usuarioService;
+
+    public List<SimpleGrantedAuthority> toSimpleGrantedAuthorities(List<Role> roles) {
+        return roles.stream().map(role -> new SimpleGrantedAuthority(role.name())).collect(Collectors.toList());
+    }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -22,7 +28,12 @@ public class UsuarioDetailsService implements UserDetailsService {
         if (usuario.isEmpty()) {
             throw new UsernameNotFoundException("User not found: " + username);
         }
-        Role role = usuarioService.getRole(usuario.get());
-        return new User(usuario.get().getEmail(), usuario.get().getPassword(), List.of(new SimpleGrantedAuthority(role.name())));
+        List<Role> roles = usuarioService.getRoles(usuario.get());
+        return new User(usuario.get().getEmail(), usuario.get().getPassword(), toSimpleGrantedAuthorities(roles));
+    }
+
+    public UserDetails fromUsuario(Usuario usuario) {
+        List<Role> roles = usuarioService.getRoles(usuario);
+        return new User(usuario.getEmail(), usuario.getPassword(), toSimpleGrantedAuthorities(roles));
     }
 }

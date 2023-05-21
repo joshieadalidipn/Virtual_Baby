@@ -1,25 +1,31 @@
 package com.virtual.virtualbaby.user;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
+@RequiredArgsConstructor
 @Service
 public class UsuarioService {
 
     private final TutorRepository tutorRepository;
+    private final UsuarioRepository usuarioRepository;
 
-    // Inyección de dependencias mediante el constructor
-    @Autowired
-    public UsuarioService(TutorRepository tutorRepository) {
-        this.tutorRepository = tutorRepository;
-    }
 
-    public Role getRole(Usuario usuario) {
+    public List<Role> getRoles(Usuario usuario) {
+        List<Role> roles = new ArrayList<>();
         Integer id = usuario.getId_usuario();
-        if (tutorRepository.existsById(id)) {
-            return Role.ROLE_TUTOR;
-        }else{
-            return Role.ROLE_USUARIO;
+
+        if (usuarioRepository.existsById(id)){
+            roles.add(Role.ROLE_USUARIO);
         }
+
+        if (tutorRepository.existsById(id)) {
+            roles.add(Role.ROLE_TUTOR);
+        }
+
+        return roles;
     }
 }
