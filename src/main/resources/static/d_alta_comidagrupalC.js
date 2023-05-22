@@ -1,11 +1,11 @@
 $(document).ready(function () {
   alert("Everything is fine");
 
-  var nombreUsuario = "ALEJANDRO ZÁRATE CÁRDENAS";
+  var nombreUsuario = "SERGIO ULISES ROJAS ALARCON";
   $("#nombreusuarioprint").text(nombreUsuario.toUpperCase());
 
 
-  var menudefault = "Tinga de queso";
+  var menudefault = "Pan de granola con leche y ensalada cesar";
   var infantes = [
     {
       "id": 2017200325,

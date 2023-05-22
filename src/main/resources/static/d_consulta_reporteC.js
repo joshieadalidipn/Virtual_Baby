@@ -35,13 +35,13 @@ $(document).ready(function () {
       "id": 1,
       "hora": "01:02",
       "tipo": "Pipi",
-      "obs": "Nada"
+      "obs": "Sin observaciones"
     },
     {
       "id": 2,
       "hora": "02:12",
-      "tipo": "Pipi",
-      "obs": "Nada"
+      "tipo": "Diarrea",
+      "obs": "Le da impulsos negativos"
     },
     {
       "id": 3,
@@ -54,14 +54,17 @@ $(document).ready(function () {
   var obses = [
     {
       "id": 1,
+      "hora": "10:23",
       "letras": "Se peleó",
     },
     {
       "id": 2,
+      "hora": "10:23",
       "letras": "Vomitó",
     },
     {
       "id": 3,
+      "hora": "10:23",
       "letras": "Se escapó del edificio",
     }
   ];
@@ -85,6 +88,7 @@ $(document).ready(function () {
   $.each(obses, function (key, val) {
     var row = $("<tr />");
     $("#obsprint tbody").append(row);
+    row.append($("<td>" + val.hora + "</td>"));
     row.append($("<td>" + val.letras + "</td>"));
   });
 });
