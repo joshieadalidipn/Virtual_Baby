@@ -11,8 +11,8 @@ import java.time.LocalDate;
 @Builder
 @Table(name = "infante")
 public class Infante {
-    @Column(name = "id_infante")
-    Integer idInfante;
+    @Column(name = "id")
+    Integer id;
 
     @Column(name = "id_grupo")
     Integer idGrupo;
@@ -20,8 +20,8 @@ public class Infante {
     @Column(name = "id_tutor")
     Integer idTutor;
 
-    @Column(name = "nombres_infante")
-    String nombresInfante;
+    @Column(name = "nombre")
+    String nombre;
 
     @Column(name = "primer_apellido")
     String primerApellido;

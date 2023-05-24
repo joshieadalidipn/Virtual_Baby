@@ -1,7 +1,7 @@
 package com.virtual.virtualbaby.user;
 
-import com.virtual.virtualbaby.entities.Usuario;
-import com.virtual.virtualbaby.entities.UsuarioRepository;
+import com.virtual.virtualbaby.entities.Usuario.Usuario;
+import com.virtual.virtualbaby.entities.Usuario.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;

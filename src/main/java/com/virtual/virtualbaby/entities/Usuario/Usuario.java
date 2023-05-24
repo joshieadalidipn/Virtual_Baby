@@ -1,4 +1,4 @@
-package com.virtual.virtualbaby.entities;
+package com.virtual.virtualbaby.entities.Usuario;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -12,17 +12,16 @@ import java.time.LocalDate;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity(name="usuario")
 @Inheritance(strategy = InheritanceType.JOINED)
-@Entity
-@Table(name = "usuario")
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_usuario")
-    private Integer idUsuario;
+    @Column(name = "id")
+    private Integer id;
 
-    @Column(name = "nombre_usuario")
-    private String nombreUsuario;
+    @Column(name = "nombre")
+    private String nombre;
 
     @Column(name = "primer_apellido")
     private String primerApellido;
@@ -52,7 +51,7 @@ public class Usuario {
     private String curp;
 
     @Column(name = "sexo")
-    private String sexo;
+    private Character sexo;
 
     @Column(name = "fecha_nacimiento")
     private LocalDate fechaNacimiento;
@@ -72,6 +71,6 @@ public class Usuario {
                 domicilio='%s',
                 curp='%s',
                 sexo='%s',
-                fechaNacimiento=%s}""".formatted(idUsuario, nombreUsuario, primerApellido, segundoApellido, email, telefonoCasa, telefonoCelular, password, rfc, domicilio, curp, sexo, fechaNacimiento);
+                fechaNacimiento=%s}""".formatted(id, nombre, primerApellido, segundoApellido, email, telefonoCasa, telefonoCelular, password, rfc, domicilio, curp, sexo, fechaNacimiento);
     }
 }
