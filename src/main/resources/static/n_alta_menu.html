@@ -17,8 +17,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
         integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="d_consulta_reporteC.js"></script>
-    <title>Vista Reporte</title>
+    <script src="n_alta_menuC.js"></script>
+    <title>Registrar Menu</title>
     <style>
 
 
@@ -99,15 +99,16 @@
                                 <div class="row mb-3">
 
                                     <div class="col-5 col-sm-9">
-                                        <h2 id="nombreinfanteprint" class=" text-center fw-bold d-none d-sm-inline ms-4">REPORTE DE
-                                            *NOMBRE_CORTO_INFANTE*</h2>
-                                        <h2 class=" text-center fw-bold d-block d-sm-none">REPORTE</h2>
+                                        <h2 id="nombreinfanteprint"
+                                            class=" text-center fw-bold d-none d-sm-inline ms-4">MENU DEL DIA DEL *GRUPO*</h2>
+                                        <h2 class=" text-center fw-bold d-block d-sm-none">MENU</h2>
                                     </div>
-                                    <div class="col-5 col-sm-2"><input type="date" class="form-control mb-3"
-                                            placeholder="01/01/2001" id="frep" name="frep"></div>
-                                    <div class="col-1 col-sm-1"><button type="submit" class="btn btn-dark mb-0 px-0"><i
-                                                class="fa-solid fa-paper-plane fa-xs ms-2 me-2 "
-                                                style="color: #ffffff;"></i></button></div>
+                                    <div class="col-5 col-sm-2">
+
+                                    </div>
+                                    <div class="col-1 col-sm-1">
+
+                                    </div>
                                 </div>
                             </form>
 
@@ -118,73 +119,36 @@
                                     <div class="col-0 col-sm-1"> </div>
                                     <div name="escribe-el-texto-aqui" class="col-12 col-sm-10">
 
+                                        <form>
 
-                                        <div>
+                                            
+                                            <div>
 
-                                            <p class="text-black m-0 py-0 d-none d-md-flex align-items-center justify-content-end titular">
-                                            COMIDAS</p>
+                                                <p
+                                                    class="text-black m-0 py-0 d-none d-md-flex align-items-center justify-content-end titular">
+                                                    ALIMENTOS</p>
 
-                                        </div>
+                                            </div>
+                                            <div name="contenidos del menu" class="mt-3 mb-4">
 
+                                                <div class="row">
+                                                    <div class="col-1 d-flex align-items-center justify-content-center">
+                                                        <div><i class="fa-solid fa-egg"
+                                                                style="color: #000000;"></i></div>
+                                                    </div>
+                                                    <div class="col-11 d-flex align-items-center">
+                                                        <textarea class="form-control" id="menuf" name="menuf"
+                                                            placeholder="Escriba los contenidos del menu del dia"></textarea>
+                                                    </div>
+                                                </div>
 
+                                            </div>
 
-                                        <div name="comidas">
-                                            <table id="comidaprint" class="table table-hover custom-table">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Hora</th>
-                                                        <th>Comida</th>
-                                                        <th>Cantidad ingerida</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    
-                                                </tbody>
-                                            </table>
-                                        </div>
+                                            <div class="text-center mt-3 mb-4" name="submit">
+                                                <button class="btn btn-dark px-4" type="submit">Enviar</button>
+                                            </div>
 
-
-                                        <div>
-
-                                            <p class="text-black m-0 py-0 d-none d-md-flex align-items-center justify-content-end titular">
-                                            EVACUACIONES</p>
-
-                                        </div>
-                                        <div name="evacuaciones">
-                                            <table id="evaprint" class="table table-hover custom-table">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Hora</th>
-                                                        <th>Tipo</th>
-                                                        <th>Notas</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    
-                                                </tbody>
-                                            </table>
-                                        </div>
-
-                                        <div>
-
-                                            <p class="text-black m-0 py-0 d-none d-md-flex align-items-center justify-content-end titular">
-                                            ANEXO</p>
-
-                                        </div>
-                                        <div name="observaciones generales">
-                                            <table id="obsprint" class="table table-hover custom-table">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Tiempo</th>
-                                                        <th>Observaciones</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    
-                                                </tbody>
-                                            </table>
-                                        </div>
-
+                                        </form>
 
                                     </div>
                                     <div class="col-0 col-sm-1"> </div>
@@ -203,7 +167,7 @@
         </div>
     </div>
     </div>
-    
+
 </body>
 
 </html>
