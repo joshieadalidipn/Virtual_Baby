@@ -25,6 +25,7 @@ $(document).ready(function () {
     $("#7pf").text(infante.talla);
     $("#8pf").text(infante.alma);
     $("#nombreinfanteprint").text("ANTECEDENTES DE " + infante.nombre.toUpperCase());
+    $("#nombreusuarioprint").text(nombreUsuario.toUpperCase());
   
   
   });
