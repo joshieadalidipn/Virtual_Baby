@@ -13,6 +13,7 @@ spring:
         format_sql: true
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+
 logging:
   level:
     org:
@@ -27,3 +28,6 @@ logging:
         descriptor:
           sql:
             BasicBinder: TRACE
+
+jwt:
+  secretKey: 482B4D6251655468576D5A7134743777217A25432A462D4A404E635266556A58

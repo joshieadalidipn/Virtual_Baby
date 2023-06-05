@@ -23,27 +23,27 @@ public class UsuarioService {
         Integer id = usuario.getId();
 
         if (existsInRepository(usuarioRepository, id)) {
-            roles.add(Role.ROLE_USUARIO);
+            roles.add(Role.USUARIO);
         }
 
         if (existsInRepository(tutorRepository, id)) {
-            roles.add(Role.ROLE_TUTOR);
+            roles.add(Role.TUTOR);
         }
 
         if (existsInRepository(trabajadorSocialRepository, id)) {
-            roles.add(Role.ROLE_TRABAJADOR_SOCIAL);
+            roles.add(Role.TRABAJADOR_SOCIAL);
         }
 
         if (existsInRepository(capitalHumanoRepository, id)) {
-            roles.add(Role.ROLE_CAPITAL_HUMANO);
+            roles.add(Role.CAPITAL_HUMANO);
         }
 
         if (existsInRepository(docenteRepository, id)) {
-            roles.add(Role.ROLE_DOCENTE);
+            roles.add(Role.DOCENTE);
         }
 
         if (existsInRepository(medicoRepository, id)) {
-            roles.add(Role.ROLE_MEDICO);
+            roles.add(Role.MEDICO);
         }
 
         return roles;

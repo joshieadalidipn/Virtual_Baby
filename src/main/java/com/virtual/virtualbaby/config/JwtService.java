@@ -5,20 +5,21 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
+
 import java.security.Key;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 
 @Service
 public class JwtService {
 
-    private static final String SECRET_KEY = "482B4D6251655468576D5A7134743777217A25432A462D4A404E635266556A58";
+    @Value("${jwt.secretKey}")
+    private String SECRET_KEY;
 
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
@@ -34,21 +35,29 @@ public class JwtService {
     }
 
     public String generateToken(Map<String, Object> extraClaims, UserDetails userDetails) {
-        Instant now = Instant.now(); // Obtener el momento actual en UTC
-        return Jwts
-                .builder()
+        Instant now = Instant.now();
+
+        // Crear las claims adicionales
+        Map<String, Object> claims = new HashMap<>();
+        claims.put("roles", userDetails.getAuthorities());
+
+        // Agregar las claims adicionales al mapa de extraClaims
+        extraClaims.putAll(claims);
+
+        return Jwts.builder()
                 .setClaims(extraClaims)
-                .setSubject(userDetails.getUsername()) // Email
-                .setIssuedAt(Date.from(now)) // Convertir el Instant en un objeto Date
-                .setExpiration(Date.from(now.plus(1, ChronoUnit.DAYS))) // Agregar un día a partir del Instant actual
+                .setSubject(userDetails.getUsername())
+                .setIssuedAt(Date.from(now))
+                .setExpiration(Date.from(now.plus(1, ChronoUnit.DAYS)))
                 .signWith(getSignInKey(), SignatureAlgorithm.HS256)
                 .compact();
     }
 
-    public boolean isTokenValid(String token, UserDetails userDetails) {
-        final String username = extractUsername(token);
-        return (username.equals(userDetails.getUsername())) && !isTokenExpired(token);
+
+    public boolean isTokenValid(String token) {
+        return !isTokenExpired(token);
     }
+
 
     public Date extractExpiration(String token) {
         return extractClaim(token, Claims::getExpiration);
@@ -67,7 +76,35 @@ public class JwtService {
                 .getBody();
     }
 
-    private Key getSignInKey() {
+    public List<String> extractRoles(String token) {
+        final Claims claims = extractAllClaims(token);
+
+        // Verificar que la claim "roles" es una lista
+        if (!(claims.get("roles") instanceof List<?> rolesObjectList)) {
+            throw new IllegalStateException("La claim 'roles' no es una lista.");
+        }
+
+        List<String> roles = new ArrayList<>();
+
+        for (Object roleObject : rolesObjectList) {
+            // Verificar que el objeto es un mapa
+            if (!(roleObject instanceof Map<?, ?> roleMap)) {
+                throw new IllegalStateException("El role no es un mapa.");
+            }
+
+            // Verificar que la clave "authority" existe y su valor es una cadena
+            if (!roleMap.containsKey("authority") || !(roleMap.get("authority") instanceof String)) {
+                throw new IllegalStateException("La clave 'authority' no existe o su valor no es una cadena.");
+            }
+
+            roles.add((String) roleMap.get("authority"));
+        }
+
+        return roles;
+    }
+
+
+    public Key getSignInKey() {
         byte[] keyBytes = Decoders.BASE64.decode(SECRET_KEY);
         return Keys.hmacShaKeyFor(keyBytes);
     }

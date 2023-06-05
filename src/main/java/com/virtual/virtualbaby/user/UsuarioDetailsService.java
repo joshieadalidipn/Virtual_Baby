@@ -33,7 +33,7 @@ public class UsuarioDetailsService implements UserDetailsService {
     }
 
 
-    public UserDetails fromUsuario(Usuario usuario) {
+    public UserDetails userToUserDetails(Usuario usuario) {
         List<Role> roles = usuarioService.getRoles(usuario);
         return new User(usuario.getEmail(), usuario.getPassword(), toSimpleGrantedAuthorities(roles));
     }

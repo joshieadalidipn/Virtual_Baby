@@ -2,8 +2,8 @@ package com.virtual.virtualbaby.auth;
 
 import com.virtual.virtualbaby.config.JwtService;
 import com.virtual.virtualbaby.entities.Usuario.Usuario;
-import com.virtual.virtualbaby.user.UsuarioDetailsService;
 import com.virtual.virtualbaby.entities.Usuario.UsuarioRepository;
+import com.virtual.virtualbaby.user.UsuarioDetailsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -22,7 +22,7 @@ public class AuthenticationService {
     public String register(Usuario usuario){
         usuario.setPassword(passwordEncoder.encode(usuario.getPassword()));
         usuarioRepository.save(usuario);
-        return jwtService.generateToken(usuarioDetailsService.fromUsuario(usuario));
+        return jwtService.generateToken(usuarioDetailsService.userToUserDetails(usuario));
     }
 
     public String login(Usuario usuario) {
@@ -35,4 +35,5 @@ public class AuthenticationService {
 
         return jwtService.generateToken(usuarioDetailsService.loadUserByUsername(usuario.getEmail()));
     }
+
 }
