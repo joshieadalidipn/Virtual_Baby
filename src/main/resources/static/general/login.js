@@ -24,8 +24,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 const payload = JSON.parse(jsonPayload);
 
                 // Define el orden de prioridad para los roles
-                const rolesPriority = ["TUTOR", "CAPITAL_HUMANO", "TRABAJADOR_SOCIAL", "USUARIO"];
+                const rolesPriority = ["DOCENTE","TUTOR", "CAPITAL_HUMANO", "TRABAJADOR_SOCIAL", "USUARIO"];
                 const rolePages = {
+                    "DOCENTE": "../docente/d_home.html",
                     "TUTOR": "../tutor/t_home.html",
                     "CAPITAL_HUMANO": "../capital_humano/ch_home.html",
                     "TRABAJADOR_SOCIAL": "../trabajador_social/ts_home.html",
