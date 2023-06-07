@@ -17,8 +17,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
         integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="g_consulta_antecedentesC.js"></script>
-    <title>Antecedentes Medicos</title>
+    <script src="ts_consulta_perfilC.js"></script>
+    <title>Perfil Infante</title>
     <style>
 
 
@@ -100,9 +100,9 @@
 
                                     <div class="col-5 col-sm-9">
                                         <h2 id="nombreinfanteprint"
-                                            class=" text-center fw-bold d-none d-sm-inline ms-4">ANTECEDENTES DE INFANTE
+                                            class=" text-center fw-bold d-none d-sm-inline ms-4">PERFIL DE INFANTE
                                         </h2>
-                                        <h2 class=" text-center fw-bold d-block d-sm-none">ANTECEDENTES</h2>
+                                        <h2 class=" text-center fw-bold d-block d-sm-none">PERFIL DE INFANTE</h2>
                                     </div>
                                     <div class="col-5 col-sm-2">
 
@@ -125,7 +125,7 @@
 
 
 
-                                            <div name="parto" class="mt-3 mb-4">
+                                            <div name="nombre" class="mt-3 mb-4">
 
                                                 <div class="row">
                                                     <div
@@ -133,19 +133,19 @@
                                                         <i class="fa-solid fa-person-breastfeeding fa-xl "
                                                             style="color: #000000;"></i><label
                                                             class="form-label ms-3 d-none d-sm-flex mt-2"
-                                                            for="alergias">FORMA DE PARTO</label>
+                                                            for="1p">NOMBRE COMPLETO</label>
                                                     </div>
                                                     <div
                                                         class="col-11 col-sm-10 d-flex align-items-center justify-content-end">
                                                         <div class="d-flex align-items-center">
-                                                            <p class="text-black" id="1pf" name="1pf"> * </p>
+                                                            <p class="text-black" id="1p" name="1p"> * </p>
                                                         </div>
                                                     </div>
                                                 </div>
 
                                             </div>
 
-                                            <div name="alergias" class="mt-3 mb-4">
+                                            <div name="edad" class="mt-3 mb-4">
 
                                                 <div class="row">
                                                     <div
@@ -153,19 +153,19 @@
                                                         <i class="fa-solid fa-bug fa-xl "
                                                             style="color: #000000;"></i><label
                                                             class="form-label ms-3 d-none d-sm-flex mt-2"
-                                                            for="alergias">ALERGIAS</label>
+                                                            for="2p">EDAD</label>
                                                     </div>
                                                     <div
                                                         class="col-11 col-sm-10 d-flex align-items-center justify-content-end">
                                                         <div class="d-flex align-items-center">
-                                                            <p class="text-black" id="2pf" name="2pf"> * </p>
+                                                            <p class="text-black" id="2p" name="2p"> * </p>
                                                         </div>
                                                     </div>
                                                 </div>
 
                                             </div>
 
-                                            <div name="padece" class="mt-3 mb-4">
+                                            <div name="sexo" class="mt-3 mb-4">
 
                                                 <div class="row">
                                                     <div
@@ -173,19 +173,19 @@
                                                         <i class="fa-solid fa-wheelchair fa-xl "
                                                             style="color: #000000;"></i><label
                                                             class="form-label ms-3 d-none d-sm-flex mt-2"
-                                                            for="alergias">PADECIMIENTOS</label>
+                                                            for="3p">SEXO</label>
                                                     </div>
                                                     <div
                                                         class="col-11 col-sm-10 d-flex align-items-center justify-content-end">
                                                         <div class="d-flex align-items-center">
-                                                            <p class="text-black" id="3pf" name="3pf"> *</p>
+                                                            <p class="text-black" id="3p" name="3p"> *</p>
                                                         </div>
                                                     </div>
                                                 </div>
 
                                             </div>
 
-                                            <div name="enfe" class="mt-3 mb-4">
+                                            <div name="curp" class="mt-3 mb-4">
 
                                                 <div class="row">
                                                     <div
@@ -193,12 +193,12 @@
                                                         <i class="fa-solid fa-virus fa-xl "
                                                             style="color: #000000;"></i><label
                                                             class="form-label ms-3 d-none d-sm-flex mt-2"
-                                                            for="alergias">ENFERMEDADES</label>
+                                                            for="4p">CURP</label>
                                                     </div>
                                                     <div
                                                         class="col-11 col-sm-10 d-flex align-items-center justify-content-end">
                                                         <div class="d-flex align-items-center">
-                                                            <p class="text-black" id="4pf" name="4pf">*</p>
+                                                            <p class="text-black" id="4p" name="4p">*</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -206,7 +206,7 @@
                                             </div>
 
 
-                                            <div name="peso" class="mt-3 mb-4">
+                                            <div name="CON QUIEN VIVE" class="mt-3 mb-4">
 
                                                 <div class="row">
                                                     <div
@@ -214,19 +214,19 @@
                                                         <i class="fa-solid fa-weight fa-xl "
                                                             style="color: #000000;"></i><label
                                                             class="form-label ms-3 d-none d-sm-flex mt-2"
-                                                            for="alergias">PESO</label>
+                                                            for="5p">VIVE CON</label>
                                                     </div>
                                                     <div
                                                         class="col-11 col-sm-10 d-flex align-items-center justify-content-end">
                                                         <div class="d-flex align-items-center">
-                                                            <p class="text-black" id="5pf" name="5pf"> *</p>
+                                                            <p class="text-black" id="5p" name="5p"> *</p>
                                                         </div>
                                                     </div>
                                                 </div>
 
                                             </div>
 
-                                            <div name="alto" class="mt-3 mb-4">
+                                            <div name="hermanos" class="mt-3 mb-4">
 
                                                 <div class="row">
                                                     <div
@@ -234,19 +234,19 @@
                                                         <i class="fa-solid fa-ruler-vertical fa-xl "
                                                             style="color: #000000;"></i><label
                                                             class="form-label ms-3 d-none d-sm-flex mt-2"
-                                                            for="alergias">ALTURA</label>
+                                                            for="6p">HERMANOS</label>
                                                     </div>
                                                     <div
                                                         class="col-11 col-sm-10 d-flex align-items-center justify-content-end">
                                                         <div class="d-flex align-items-center">
-                                                            <p class="text-black" id="6pf" name="6pf">*</p>
+                                                            <p class="text-black" id="6p" name="6p">*</p>
                                                         </div>
                                                     </div>
                                                 </div>
 
                                             </div>
 
-                                            <div name="talla" class="mt-3 mb-4">
+                                            <div name="cuidados" class="mt-3 mb-4">
 
                                                 <div class="row">
                                                     <div
@@ -254,19 +254,19 @@
                                                         <i class="fa-solid fa-ruler-horizontal fa-xl "
                                                             style="color: #000000;"></i><label
                                                             class="form-label ms-3 d-none d-sm-flex mt-2"
-                                                            for="alergias">TALLA</label>
+                                                            for="7p">CUIDADOS ESPECIALES</label>
                                                     </div>
                                                     <div
                                                         class="col-11 col-sm-10 d-flex align-items-center justify-content-end">
                                                         <div class="d-flex align-items-center">
-                                                            <p class="text-black" id="7pf" name="7pf"> *</p>
+                                                            <p class="text-black" id="7p" name="7p"> *</p>
                                                         </div>
                                                     </div>
                                                 </div>
 
                                             </div>
 
-                                            <div name="alma" class="mt-3 mb-4">
+                                            <div name="familiograma" class="mt-3 mb-4">
 
                                                 <div class="row">
                                                     <div
@@ -274,12 +274,12 @@
                                                         <i class="fa-solid fa-ghost fa-xl "
                                                             style="color: #000000;"></i><label
                                                             class="form-label ms-3 d-none d-sm-flex mt-2"
-                                                            for="alergias">COLOR ALMA</label>
+                                                            for="8p">FAMILIOGRAMA</label>
                                                     </div>
                                                     <div
                                                         class="col-11 col-sm-10 d-flex align-items-center justify-content-end">
                                                         <div class="d-flex align-items-center">
-                                                            <p class="text-black" id="8pf" name="8pf">*</p>
+                                                            <p class="text-black" id="8p" name="8p">*</p>
                                                         </div>
                                                     </div>
                                                 </div>
