@@ -17,8 +17,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
         integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="ch_alta_tutorC.js"></script>
-    <title>Alta Tutor</title>
+    <script src="ts_alta_ibasicosC.js"></script>
+    <title>Datos basicos de infante</title>
     <style>
 
 
@@ -50,19 +50,26 @@
                 <div class="col-11 col-sm-10 ms-1 ms-sm-0 text-start">
                     <div id="Barra superior" class="mt-0 mb-3 container-fluid g-0">
                         <div class="row ">
-                            <div class="col-6"><a href="#"
+                            <div class="col-4"><a href="#"
                                     class="btn btn-secondary me-0 me-sm-4 m-1 px-3 py-1 d-flex justify-content-center align-items-center"><i
                                         class="fa-solid fa-people-group d-md-none d-inline" style="color: #ffffff;"></i>
                                     <p
                                         class="text-white m-0 px-0 py-0 d-none d-md-flex justify-content-center align-items-center">
-                                        LISTA DE TRABAJADORES</p>
+                                        LISTA DE INFANTES</p>
                                 </a> </div>
-                            <div class="col-6"><a href="#"
+                            <div class="col-4"><a href="#"
                                     class="btn btn-secondary me-0 me-sm-4 m-1 px-3 py-1 d-flex justify-content-center align-items-center"><i
                                         class="fa-solid fa-clock d-md-none d-inline" style="color: #ffffff;"></i>
                                     <p
                                         class="text-white m-0 px-0 py-0 d-none d-md-flex justify-content-center align-items-center">
-                                        AGREGAR TRABAJADOR</p>
+                                        AGREGAR INFANTE</p>
+                                </a> </div>
+                            <div class="col-4"><a href="#"
+                                    class="btn btn-secondary me-0 me-sm-4 m-1 px-3 py-1 d-flex justify-content-center align-items-center"><i
+                                        class="fa-solid fa-clock d-md-none d-inline" style="color: #ffffff;"></i>
+                                    <p
+                                        class="text-white m-0 px-0 py-0 d-none d-md-flex justify-content-center align-items-center">
+                                        GRUPOS</p>
                                 </a> </div>
 
 
@@ -85,9 +92,9 @@
                                 <div class="row mb-3">
 
                                     <div class="col-12 col-sm-9">
-                                        <h2 class=" text-center fw-bold d-none d-sm-inline ms-4">DAR ROL TUTOR
+                                        <h2 class=" text-center fw-bold d-none d-sm-inline ms-4">REGISTRO DE INFANTE
                                         </h2>
-                                        <h2 class=" text-center fw-bold d-block d-sm-none">DAR ROL TUTOR</h2>
+                                        <h2 class=" text-center fw-bold d-block d-sm-none">REGISTRO</h2>
                                     </div>
                                 </div>
                             </form>
@@ -98,74 +105,146 @@
                                 <div class="row ">
                                     <div class="col-0 col-sm-1"> </div>
                                     <div name="escribe-el-texto-aqui" class="col-12 col-sm-10">
+
                                         <form>
-                                            <div name="ID" class="container-fluid g-0 mt-3 mb-4">
+                                            <div name="NOMBRES" class="container-fluid g-0 mt-3 mb-4">
                                                 <div class="row ">
                                                     <div class="col-0"></div>
                                                     <div class="col-4 d-flex align-items-center justify-content-start">
-                                                        <i class="fa-solid fa-hashtag fa-1x d-none d-sm-inline"
-                                                            style="color: #000000;"></i><label
-                                                            class="form-label ms-3 mt-1 mt-sm-0 texto1" for="idf">ID
-                                                            USUARIO</label>
+                                                        
+                                                        <i class="fa-solid fa-baby fa-xl mt-0 d-none d-sm-inline"
+                                                        style="color: #000000;"></i><label class="form-label ms-3 mt-1 mt-sm-0"
+                                                                                           for="nombres">NOMBRES</label>
+
+
                                                     </div>
                                                     <div class="col-8  d-flex align-items-center">
-                                                        <input class="form-control" id="idf"
-                                                            placeholder="Ingresa el id del usuario para el rol"
-                                                            type="text">
+                                                        
+
+                                                        <input class="form-control mb-3" id="nombres" name="nombres"
+                                                        placeholder="Ingresa los nombres del infante" type="text">
+
+
                                                     </div>
                                                     <div class="col-0"></div>
                                                 </div>
                                             </div>
 
-                                            <div name="TEL TRAB" class="container-fluid g-0 mt-3 mb-4">
+                                            <div name="PRIMER APELLIDO" class="container-fluid g-0 mt-3 mb-4">
                                                 <div class="row ">
                                                     <div class="col-0"></div>
                                                     <div class="col-4 d-flex align-items-center justify-content-start">
-                                                        <i class="fa-solid fa-phone fa-1x d-none d-sm-inline"
-                                                            style="color: #000000;"></i><label
-                                                            class="form-label ms-3 mt-1 mt-sm-0 texto1"
-                                                            for="telf">TELEFONO TRABAJO</label>
+                                                        
+                                                        <i class="fa-solid fa-person fa-xl mt-0 d-none d-sm-inline"
+                                                        style="color: #000000;"></i><label class="form-label ms-3 mt-1 mt-sm-0"
+                                                                                           for="pap">PRIMER
+                                                     APELLIDO</label>
+
+
                                                     </div>
                                                     <div class="col-8  d-flex align-items-center">
-                                                        <input class="form-control" id="telf"
-                                                            placeholder="Ingresa el telefono del trabajo del tutor"
-                                                            type="text">
+                                                        
+
+                                                        <input class="form-control mb-3" id="pap" name="pap"
+                                                        placeholder="Ingresa el primer apellido del infante" type="text">
+
+
                                                     </div>
                                                     <div class="col-0"></div>
                                                 </div>
                                             </div>
 
-                                            <div name="DOM TRAB" class="container-fluid g-0 mt-3 mb-4">
+                                            <div name="SEGUNDO APELLIDO" class="container-fluid g-0 mt-3 mb-4">
                                                 <div class="row ">
                                                     <div class="col-0"></div>
                                                     <div class="col-4 d-flex align-items-center justify-content-start">
-                                                        <i class="fa-solid fa-building fa-1x d-none d-sm-inline"
-                                                            style="color: #000000;"></i><label
-                                                            class="form-label ms-3 mt-1 mt-sm-0 texto1"
-                                                            for="domf">DOMICILIO TRABAJO</label>
+                                                        
+                                                        <i class="fa-solid fa-person-dress fa-xl mt-0 d-none d-sm-inline"
+                                                        style="color: #000000;"></i><label class="form-label ms-3 mt-1 mt-sm-0"
+                                                                                           for="sap">SEGUNDO
+                                                     APELLIDO</label>
+
+
                                                     </div>
                                                     <div class="col-8  d-flex align-items-center">
-                                                        <input class="form-control" id="domf"
-                                                            placeholder="Ingresa el domicio de trabajo del tutor"
-                                                            type="text">
+                                                        
+
+                                                        <input class="form-control mb-3" id="sap" name="sap"
+                                                        placeholder="Ingresa el segundo apellido del infante" type="text">
+
+
                                                     </div>
                                                     <div class="col-0"></div>
                                                 </div>
                                             </div>
 
-                                            <div name="FOTO" class="container-fluid g-0 mt-3 mb-4">
+                                            <div name="FECHA DE NACIMIENTO" class="container-fluid g-0 mt-3 mb-4">
                                                 <div class="row ">
                                                     <div class="col-0"></div>
                                                     <div class="col-4 d-flex align-items-center justify-content-start">
-                                                        <i class="fa-solid fa-image fa-1x d-none d-sm-inline"
-                                                            style="color: #000000;"></i><label
-                                                            class="form-label ms-3 mt-1 mt-sm-0 texto1"
-                                                            for="fotof">FOTO</label>
+                                                        
+                                                        <i class="fa-solid fa-cake-candles fa-xl mt-0 d-none d-sm-inline"
+                                                        style="color: #000000;"></i><label class="form-label ms-3 mt-1 mt-sm-0"
+                                                                                           for="fnac">FECHA
+                                                     DE NACIMIENTO</label>
+
+
                                                     </div>
                                                     <div class="col-8  d-flex align-items-center">
-                                                        <input class="form-control" id="fotof"
-                                                            placeholder="Ingresa el id del usuario para el rol"
-                                                            type="file">
+                                                        
+
+                                                        <input class="form-control mb-3" id="fnac" name="fnac" placeholder="01/01/2001"
+                                                        type="date">
+
+
+                                                    </div>
+                                                    <div class="col-0"></div>
+                                                </div>
+                                            </div>
+
+                                            <div name="SEXO" class="container-fluid g-0 mt-3 mb-4">
+                                                <div class="row ">
+                                                    <div class="col-0"></div>
+                                                    <div class="col-4 d-flex align-items-center justify-content-start">
+                                                        
+                                                        <i class="fa-solid fa-venus-mars fa-xl mt-0 d-none d-sm-inline"
+                                                        style="color: #000000;"></i><label class="form-label ms-3 mt-1 mt-sm-0"
+                                                                                           for="genero">SEXO</label>
+
+
+                                                    </div>
+                                                    <div class="col-8  d-flex align-items-center">
+                                                        
+
+                                                        <select class="form-select mb-3" id="genero" name="genero" placeholder="Hombre">
+                                                            <option>Hombre</option>
+                                                            <option>Mujer</option>
+                                                        </select>
+
+
+                                                    </div>
+                                                    <div class="col-0"></div>
+                                                </div>
+                                            </div>
+
+                                            <div name="CURP" class="container-fluid g-0 mt-3 mb-4">
+                                                <div class="row ">
+                                                    <div class="col-0"></div>
+                                                    <div class="col-4 d-flex align-items-center justify-content-start">
+                                                        
+                                                        <i class="fa-solid fa-dna fa-xl mt-0 d-none d-sm-inline"
+                                                        style="color: #000000;"></i><label class="form-label ms-3 mt-1 mt-sm-0"
+                                                                                           for="curp">CURP</label>
+
+
+                                                    </div>
+                                                    <div class="col-8  d-flex align-items-center">
+                                                        
+
+                                                        <input class="form-control mb-3" id="curp"
+                                                        name="curp" placeholder="Ingresa el curp del infante" type="text">
+
+
                                                     </div>
                                                     <div class="col-0"></div>
                                                 </div>
@@ -174,7 +253,10 @@
                                             <div class="text-center mt-3 mb-4" name="submit">
                                                 <button class="btn btn-dark px-4" type="submit">Enviar</button>
                                             </div>
+
                                         </form>
+
+
                                     </div>
                                     <div class="col-0 col-sm-1"> </div>
                                 </div>
