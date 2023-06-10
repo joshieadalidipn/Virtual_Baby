@@ -1,7 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-    alert("Everything is fine");
-
-    const nombreUsuario = "SERGIO ULISES ROJAS ALARCON";
     const infante = {
         "id": "123",
         "nombre": "Melissa",
@@ -24,5 +21,4 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("7pf").textContent = infante.talla;
     document.getElementById("8pf").textContent = infante.alma;
     document.getElementById("nombreinfanteprint").textContent = "ANTECEDENTES DE " + infante.nombre.toUpperCase();
-    document.getElementById("nombreusuarioprint").textContent = nombreUsuario.toUpperCase();
 });
