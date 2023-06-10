@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+          integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+          referrerpolicy="no-referrer" rel="stylesheet"/>
+    <link href="css/custom.css" rel="stylesheet">
+
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" rel="stylesheet">
+    <script crossorigin="anonymous"
+            integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+            referrerpolicy="no-referrer"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="../common/js/mostrar_datos.js"></script>
+    <script src="js/d_consulta_infantesC.js"></script>
+    <title>Lista de infantes</title>
+</head>
+
+<body class="bg-light g-0">
+<div class="container-fluid mt-2 ms-2 g-0" id="texto_bg">
+    <div class="container-fluid g-0" id="barra_superior_bg">
+        <div class="row">
+            <div class="col-9 text-start ">
+                <h1 class="mt-3 mt-sm-0" id="nombreusuarioprint"> NOMBRE DE USUARIO </h1>
+            </div>
+            <div class="col-3 text-end">
+                <div class="d-flex h-100 align-items-center justify-content-end">
+                    <a class="btn btn-dark me-4 m-1 px-3 py-3 d-flex justify-content-center align-items-center"
+                       href="#"><i
+                            class="fa-solid fa-house" style="color: #ffffff;"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-2 container-fluid g-0" id="cuerpo_bg">
+
+        <div class="row" id="barra_arriba">
+            <div class="col-0 col-sm-1 text-start">
+            </div>
+            <div class="col-11 col-sm-10 ms-1 ms-sm-0 text-start">
+                <div class="mt-0 mb-3 container-fluid g-0" id="Barra superior">
+                    <div class="row ">
+                        <div class="col-3"><a
+                                class="btn btn-secondary me-0 me-sm-4 m-1 px-3 py-1 d-flex justify-content-center align-items-center"
+                                href="#"><i
+                                class="fa-solid fa-people-group d-md-none d-inline" style="color: #ffffff;"></i>
+                            <p
+                                    class="text-white m-0 px-0 py-0 d-none d-md-flex justify-content-center align-items-center">
+                                LISTA DE INFANTES</p>
+                        </a></div>
+                        <div class="col-3"><a
+                                class="btn btn-secondary me-0 me-sm-4 m-1 px-3 py-1 d-flex justify-content-center align-items-center"
+                                href="#"><i
+                                class="fa-solid fa-clock d-md-none d-inline" style="color: #ffffff;"></i>
+                            <p
+                                    class="text-white m-0 px-0 py-0 d-none d-md-flex justify-content-center align-items-center">
+                                AREA DE REPORTES</p>
+                        </a></div>
+                        <div class="col-3"><a
+                                class="btn btn-secondary me-0 me-sm-4 m-1 px-3 py-1 d-flex justify-content-center align-items-center"
+                                href="#"><i
+                                class="fa-solid fa-calendar-days d-md-none d-inline"
+                                style="color: #ffffff;"></i>
+                            <p
+                                    class="text-white m-0 px-0 py-0 d-none d-md-flex justify-content-center align-items-center">
+                                CALENDARIO GRUPAL</p>
+                        </a></div>
+                        <div class="col-3"><a
+                                class="btn btn-secondary me-0 me-sm-4 m-1 px-3 py-1 d-flex justify-content-center align-items-center"
+                                href="#"><i
+                                class="fa-solid fa-list-check d-md-none d-inline" style="color: #ffffff;"></i>
+                            <p
+                                    class="text-white m-0 px-0 py-0 d-none d-md-flex justify-content-center align-items-center">
+                                SECCION DE TAREAS</p>
+                        </a></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" name="area_cuerpo">
+            <div class="col-0 col-sm-1 text-start">
+            </div>
+            <div class="col-11 col-sm-10 ms-1 ms-sm-0 text-start bg-white shadow-sm rounded-5">
+
+
+                <div class="mt-3 container-fluid" id="Verdadero cuerpo_main">
+
+                    <div class="container-fluid g-0" name="titulo">
+
+                        <form>
+                            <div class="row mb-3">
+
+                                <div class="col-9">
+                                    <h2 class=" text-center fw-bold d-inline ms-4">LISTA DE INFANTES</h2>
+                                </div>
+                            </div>
+                        </form>
+
+
+                        <div class="container-fluid g-0" name="base-de-cuerpo-interno">
+                            <div class="row ">
+                                <div class="col-0 col-sm-1"></div>
+                                <div class="col-12 col-sm-10" name="escribe-el-texto-aqui">
+
+
+                                    <div>
+
+                                        <p class="text-black m-0 py-0 d-none d-md-flex align-items-center justify-content-end titular">
+                                            COMIDAS</p>
+
+                                    </div>
+
+
+                                    
+                                        <div name="comidas">
+                                            <table class="table table-hover custom-table" id="infantesprint">
+                                                <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Nombre</th>
+                                                    <th>Comida</th>
+                                                    <th>Evacuacion</th>
+                                                    <th>Perfil</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="col-8 text-center">
+
+                                            
+                                        </div>
+
+                                    
+
+
+                                </div>
+                                <div class="col-0 col-sm-1"></div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-0 col-sm-1 text-end">
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
