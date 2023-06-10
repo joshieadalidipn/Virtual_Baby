@@ -31,6 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function setUserData(userData) {
-    const nombreCompleto = userData.nombre + " " + userData.primerApellido + " " + userData.segundoApellido;
+    const nombreCompleto = `${userData.nombre} ${userData.primerApellido} ${userData.segundoApellido}`
     document.getElementById("nombreusuarioprint").textContent = nombreCompleto.toUpperCase();
 }
