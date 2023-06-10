@@ -1,6 +1,5 @@
 package com.virtual.virtualbaby.auth.security;
 
-import com.virtual.virtualbaby.auth.security.JwtAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,8 +23,10 @@ public class SecurityConfiguration {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/","/pages/**", "/auth/**","/hello/**")
+                .requestMatchers("/", "/pages/**", "/auth/**", "/hello/**")
                 .permitAll()
+                .requestMatchers("/infante")
+                .hasAnyAuthority("DOCENTE", "TUTOR")
                 .anyRequest()
                 .authenticated()
                 .and()
