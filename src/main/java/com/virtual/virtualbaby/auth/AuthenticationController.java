@@ -13,7 +13,7 @@ public class AuthenticationController {
     private final AuthenticationService authenticationService;
     private static final Logger logger = LoggerFactory.getLogger(AuthenticationController.class);
 
-    @PostMapping("/register_user")
+    @PostMapping("/register")
     public ResponseEntity<String> registerUser(
             @RequestBody Usuario usuario){
         logger.info("Se recibió una petición en /registerUser: " + usuario);

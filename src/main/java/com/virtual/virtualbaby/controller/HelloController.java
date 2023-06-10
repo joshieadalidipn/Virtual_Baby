@@ -9,37 +9,42 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/hello")
 public class HelloController {
-    @PreAuthorize("hasRole('USUARIO')")
+    @PreAuthorize("isAuthenticated()")
+    @GetMapping("/any")
+    public ResponseEntity<String> helloAny(){
+        return ResponseEntity.ok("Ok");
+    }
+    @PreAuthorize("hasAuthority('USUARIO')")
     @GetMapping("/usuario")
     public ResponseEntity<String> helloUsuario(){
         return ResponseEntity.ok("Hola Usuario");
     }
-    @PreAuthorize("hasRole('TUTOR')")
+    @PreAuthorize("hasAuthority('TUTOR')")
     @GetMapping("/tutor")
     public ResponseEntity<String> helloTutor(){
         return ResponseEntity.ok("Hola Tutor");
     }
-    @PreAuthorize("hasRole('DOCENTE')")
+    @PreAuthorize("hasAuthority('DOCENTE')")
     @GetMapping("/docente")
     public ResponseEntity<String> helloDocente(){
         return ResponseEntity.ok("Hola Docente");
     }
-    @PreAuthorize("hasRole('MEDICO')")
+    @PreAuthorize("hasAuthority('MEDICO')")
     @GetMapping("/medico")
     public ResponseEntity<String> helloMedico(){
         return ResponseEntity.ok("Hola Médico");
     }
-    @PreAuthorize("hasRole('CAPITAL_HUMANO')")
+    @PreAuthorize("hasAuthority('CAPITAL_HUMANO')")
     @GetMapping("/capitalHumano")
     public ResponseEntity<String> helloCapitalHumano(){
         return ResponseEntity.ok("Hola personal de Capital Humano");
     }
-    @PreAuthorize("hasRole('TRABAJADOR_SOCIAL')")
+    @PreAuthorize("hasAuthority('TRABAJADOR_SOCIAL')")
     @GetMapping("/trabajadorSocial")
     public ResponseEntity<String> helloTrabajadorSocial(){
         return ResponseEntity.ok("Hola Trabajador Social");
     }
-    @PreAuthorize("hasRole('DIRECTORA')")
+    @PreAuthorize("hasAuthority('DIRECTORA')")
     @GetMapping("/directora")
     public ResponseEntity<String> helloDirectora(){
         return ResponseEntity.ok("Hola Directora");

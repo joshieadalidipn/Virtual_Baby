@@ -1,4 +1,4 @@
-$(document).ready(function () {
+document.addEventListener("DOMContentLoaded", function () {
     const jwt = localStorage.getItem('jwt');
 
     if (!jwt) {
@@ -9,7 +9,7 @@ $(document).ready(function () {
     const userData = sessionStorage.getItem('userData');
 
     if (!userData) {
-        fetch('/capitalHumano/datos', {
+        fetch('/usuario/datos', {
             headers: {
                 'Authorization': `Bearer ${jwt}`
             }
@@ -32,5 +32,5 @@ $(document).ready(function () {
 
 function setUserData(userData) {
     const nombreCompleto = userData.nombre + " " + userData.primerApellido + " " + userData.segundoApellido;
-    $("#nombreusuarioprint").text(nombreCompleto.toUpperCase());
+    document.getElementById("nombreusuarioprint").textContent = nombreCompleto.toUpperCase();
 }

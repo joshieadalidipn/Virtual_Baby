@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class TutorController {
     public final UsuarioRepository usuarioRepository;
     public final TutorRepository tutorRepository;
-    @PreAuthorize("hasRole('ROLE_TUTOR')")
-    @PostMapping("/register_tutor")
+    @PreAuthorize("hasRole('TUTOR')")
+    @PostMapping("/tutor")
     public ResponseEntity<String> registerTutor(@RequestBody Tutor tutor) {
         tutorRepository.save(tutor);
         return ResponseEntity.ok("Usuario registrado");
