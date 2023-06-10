@@ -17,8 +17,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
         integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="d_alta_reportemedicoC.js"></script>
-    <title>Reporte Medico</title>
+    <script src="ch_alta_capitalC.js"></script>
+    <title>Alta Capital Humano</title>
     <style>
 
 
@@ -50,35 +50,21 @@
                 <div class="col-11 col-sm-10 ms-1 ms-sm-0 text-start">
                     <div id="Barra superior" class="mt-0 mb-3 container-fluid g-0">
                         <div class="row ">
-                            <div class="col-3"><a href="#"
+                            <div class="col-6"><a href="#"
                                     class="btn btn-secondary me-0 me-sm-4 m-1 px-3 py-1 d-flex justify-content-center align-items-center"><i
                                         class="fa-solid fa-people-group d-md-none d-inline" style="color: #ffffff;"></i>
                                     <p
                                         class="text-white m-0 px-0 py-0 d-none d-md-flex justify-content-center align-items-center">
-                                        LISTA DE INFANTES</p>
+                                        LISTA DE TRABAJADORES</p>
                                 </a> </div>
-                            <div class="col-3"><a href="#"
+                            <div class="col-6"><a href="#"
                                     class="btn btn-secondary me-0 me-sm-4 m-1 px-3 py-1 d-flex justify-content-center align-items-center"><i
                                         class="fa-solid fa-clock d-md-none d-inline" style="color: #ffffff;"></i>
                                     <p
                                         class="text-white m-0 px-0 py-0 d-none d-md-flex justify-content-center align-items-center">
-                                        AREA DE REPORTES</p>
+                                        AGREGAR TRABAJADOR</p>
                                 </a> </div>
-                            <div class="col-3"><a href="#"
-                                    class="btn btn-secondary me-0 me-sm-4 m-1 px-3 py-1 d-flex justify-content-center align-items-center"><i
-                                        class="fa-solid fa-calendar-days d-md-none d-inline"
-                                        style="color: #ffffff;"></i>
-                                    <p
-                                        class="text-white m-0 px-0 py-0 d-none d-md-flex justify-content-center align-items-center">
-                                        CALENDARIO GRUPAL</p>
-                                </a> </div>
-                            <div class="col-3"><a href="#"
-                                    class="btn btn-secondary me-0 me-sm-4 m-1 px-3 py-1 d-flex justify-content-center align-items-center"><i
-                                        class="fa-solid fa-list-check d-md-none d-inline" style="color: #ffffff;"></i>
-                                    <p
-                                        class="text-white m-0 px-0 py-0 d-none d-md-flex justify-content-center align-items-center">
-                                        SECCION DE TAREAS</p>
-                                </a> </div>
+
 
                         </div>
                     </div>
@@ -88,7 +74,7 @@
             <div name="area_cuerpo" class="row">
                 <div class="col-0 col-sm-1 text-start">
                 </div>
-                <div class="col-11 col-sm-10 ms-1 ms-sm-0 text-start bg-white shadow-sm rounded-5">
+                <div class="col-11 col-sm-10 ms-3 ms-sm-0 text-start bg-white shadow-sm rounded-5">
 
 
                     <div id="Verdadero cuerpo_main" class="mt-3 container-fluid">
@@ -98,17 +84,10 @@
                             <form>
                                 <div class="row mb-3">
 
-                                    <div class="col-5 col-sm-9">
-                                        <h2 id="nombreinfanteprint"
-                                            class=" text-center fw-bold d-none d-sm-inline ms-4">REPORTE DE
-                                            *NOMBRE_CORTO_INFANTE*</h2>
-                                        <h2 class=" text-center fw-bold d-block d-sm-none">REPORTE</h2>
-                                    </div>
-                                    <div class="col-5 col-sm-2">
-
-                                    </div>
-                                    <div class="col-1 col-sm-1">
-
+                                    <div class="col-12 col-sm-9">
+                                        <h2 class=" text-center fw-bold d-none d-sm-inline ms-4">DAR ROL CAPITAL HUMANO
+                                        </h2>
+                                        <h2 class=" text-center fw-bold d-block d-sm-none">DAR ROL CAPITAL HUMANO</h2>
                                     </div>
                                 </div>
                             </form>
@@ -122,52 +101,25 @@
 
                                         <form>
 
-                                            <div>
-
-                                                <p
-                                                    class="text-black m-0 py-0 d-none d-md-flex align-items-center justify-content-end titular">
-                                                    TIPO DE EVACUACION</p>
-
-                                            </div>
-                                            <div name="tipo_evacuacion" class="mt-3 mb-4">
-
-                                                <div class="row">
-                                                    <div class="col-1 d-flex align-items-center justify-content-center">
-                                                        <div><i class="fa-solid fa-toilet"
-                                                                style="color: #000000;"></i></div>
+                                            <div name="ID" class="container-fluid g-0 mt-3 mb-4">
+                                                <div class="row ">
+                                                    <div class="col-0"></div>
+                                                    <div class="col-4 d-flex align-items-center justify-content-start">
+                                                        <i class="fa-solid fa-hashtag fa-1x d-none d-sm-inline"
+                                                            style="color: #000000;"></i><label
+                                                            class="form-label ms-3 mt-1 mt-sm-0 texto1" for="idf">ID
+                                                            USUARIO</label>
                                                     </div>
-                                                    <div class="col-11 d-flex align-items-center">
-                                                        <select class="form-select" id="tipof">
-                                                            <option>Pipi</option>
-                                                            <option>Popo</option>
-                                                            <option>Diarrea</option>
-                                                        </select>
+                                                    <div class="col-8  d-flex align-items-center">
+                                                        <input class="form-control" id="idf"
+                                                            placeholder="Ingresa el id del usuario para el rol"
+                                                            type="text">
                                                     </div>
+                                                    <div class="col-0"></div>
                                                 </div>
-
                                             </div>
 
-                                            <div>
 
-                                                <p
-                                                    class="text-black m-0 py-0 d-none d-md-flex align-items-center justify-content-end titular">
-                                                    NOTAS</p>
-
-                                            </div>
-                                            <div name="observaciones generales" class="mt-3 mb-4">
-
-                                                <div class="row">
-                                                    <div class="col-1 d-flex align-items-center justify-content-center">
-                                                        <div><i class="fa-solid fa-face-smile"
-                                                                style="color: #000000;"></i></div>
-                                                    </div>
-                                                    <div class="col-11 d-flex align-items-center">
-                                                        <textarea class="form-control" id="notaf" name="notaf"
-                                                            placeholder="Sin observaciones"></textarea>
-                                                    </div>
-                                                </div>
-
-                                            </div>
 
                                             <div class="text-center mt-3 mb-4" name="submit">
                                                 <button class="btn btn-dark px-4" type="submit">Enviar</button>

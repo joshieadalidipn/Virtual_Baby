@@ -1,0 +1,22 @@
+.custom-table tbody tr:hover {
+  outline: none;
+}
+
+
+
+.titular {
+  font-size: larger;
+  font-weight: bold;
+
+}
+
+.titular2 {
+  font-size: 25px;
+  font-weight: bold;
+  color: rgb(108, 108, 108);
+
+}
+
+.texto1 {
+  font-size: 20px;
+}
