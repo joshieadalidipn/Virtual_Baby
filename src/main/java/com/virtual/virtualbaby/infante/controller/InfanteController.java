@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -25,5 +26,11 @@ public class InfanteController {
         return optionalInfante.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    @PreAuthorize("hasAnyAuthority('DOCENTE')")
+    @GetMapping("/")
+    public ResponseEntity<List<Infante>> getAllInfantes() {
+        List<Infante> infantes = infanteRepository.findAll();
+        return ResponseEntity.ok(infantes);
+    }
 
 }
