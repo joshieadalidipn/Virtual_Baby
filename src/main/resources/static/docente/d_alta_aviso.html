@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="custom.css">
+    <link href="css/custom.css" rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
@@ -17,8 +17,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
         integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="d_alta_evacuacionC.js"></script>
-    <title>Reporte Evacuacion</title>
+    <script src="js/d_alta_avisoC.js"></script>
+    <title>Aviso para tutor</title>
     <style>
 
 
@@ -88,7 +88,7 @@
             <div name="area_cuerpo" class="row">
                 <div class="col-0 col-sm-1 text-start">
                 </div>
-                <div class="col-11 col-sm-10 ms-1 ms-sm-0 text-start bg-white shadow-sm rounded-5">
+                <div class="col-11 col-sm-10 ms-3 ms-sm-0 text-start bg-white shadow-sm rounded-5">
 
 
                     <div id="Verdadero cuerpo_main" class="mt-3 container-fluid">
@@ -100,9 +100,9 @@
 
                                     <div class="col-5 col-sm-9">
                                         <h2 id="nombreinfanteprint"
-                                            class=" text-center fw-bold d-none d-sm-inline ms-4">REPORTE DE
+                                            class=" text-center fw-bold d-none d-sm-inline ms-4">AVISO PARA TUTOR DE
                                             *NOMBRE_CORTO_INFANTE*</h2>
-                                        <h2 class=" text-center fw-bold d-block d-sm-none">REPORTE</h2>
+                                        <h2 class=" text-center fw-bold d-block d-sm-none">AVISO PARA TUTOR DE</h2>
                                     </div>
                                     <div class="col-5 col-sm-2">
 
@@ -126,18 +126,18 @@
 
                                                 <p
                                                     class="text-black m-0 py-0 d-none d-md-flex align-items-center justify-content-end titular">
-                                                    FECHA AVISO</p>
+                                                    FECHA</p>
 
                                             </div>
-                                            <div name="fecha" class="mt-3 mb-4">
+                                            <div name="tipo_evacuacion" class="mt-3 mb-4">
 
                                                 <div class="row">
                                                     <div class="col-1 d-flex align-items-center justify-content-center">
-                                                        <div><i class="fa-solid fa-clock"
+                                                        <div><i class="fa-solid fa-calendar"
                                                                 style="color: #000000;"></i></div>
                                                     </div>
-                                                    <div class="col-11 d-flex align-items-center justify-content-end">
-                                                        <p>Esta fecha se refiere a la esperada donde el aviso entre en vigor </p><input type="date" class="" id="fechaf">
+                                                    <div class="col-11 d-flex align-items-center">
+                                                        <input type="text" id="fechaf" class="form-control" disabled>
                                                     </div>
                                                 </div>
 
@@ -150,7 +150,7 @@
                                                     DESCRIPCION</p>
 
                                             </div>
-                                            <div name="descripcion generales" class="mt-3 mb-4">
+                                            <div name="observaciones generales" class="mt-3 mb-4">
 
                                                 <div class="row">
                                                     <div class="col-1 d-flex align-items-center justify-content-center">
