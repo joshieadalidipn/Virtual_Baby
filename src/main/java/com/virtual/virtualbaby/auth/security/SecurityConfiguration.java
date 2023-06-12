@@ -27,6 +27,8 @@ public class SecurityConfiguration {
                 .permitAll()
                 .requestMatchers("/infante")
                 .hasAnyAuthority("DOCENTE", "TUTOR")
+                .requestMatchers("/reporte")
+                .hasAuthority("TUTOR")
                 .anyRequest()
                 .authenticated()
                 .and()

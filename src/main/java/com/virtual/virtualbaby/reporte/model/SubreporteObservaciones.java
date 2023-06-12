@@ -15,6 +15,7 @@ import java.time.LocalTime;
 @Entity
 public class SubreporteObservaciones {
     @Id
+    @GeneratedValue
     private Integer id;
     @ManyToOne
     @JoinColumn(nullable = false)

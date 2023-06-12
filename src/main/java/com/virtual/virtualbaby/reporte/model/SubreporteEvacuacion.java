@@ -16,7 +16,7 @@ import java.time.LocalTime;
 @NoArgsConstructor
 public class SubreporteEvacuacion {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private Integer id;
 
     @ManyToOne

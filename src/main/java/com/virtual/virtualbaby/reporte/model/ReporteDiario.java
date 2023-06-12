@@ -18,8 +18,8 @@ import java.util.List;
 @NoArgsConstructor
 public class ReporteDiario {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @GeneratedValue
+    private Long id;
 
     @ManyToOne
     @JoinColumn(nullable = false)

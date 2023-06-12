@@ -1,7 +1,7 @@
 package com.virtual.virtualbaby.infante.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import com.virtual.virtualbaby.user.model.Usuario;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,25 +17,30 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class Infante {
     @Id
-    Integer id;
-    Integer idGrupo;
-    Integer idTutor;
-    String nombre;
-    String primerApellido;
-    String segundoApellido;
-    LocalDate fechaNacimiento;
-    String sexo;
-    String formaParto;
-    String alergias;
-    String padecimientos;
-    String enfermedades;
-    String peso;
-    String talla;
-    String altura;
-    String curp;
-    String viveCon;
-    Integer numeroHermanos;
-    String colorAlma;
-    URL familiograma;
+    @GeneratedValue
+    private Long id;
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    private Grupo grupo;
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    private Usuario tutor;
+    private String nombre;
+    private String primerApellido;
+    private String segundoApellido;
+    private LocalDate fechaNacimiento;
+    private String sexo;
+    private String formaParto;
+    private String alergias;
+    private String padecimientos;
+    private String enfermedades;
+    private String peso;
+    private String talla;
+    private String altura;
+    private String curp;
+    private String viveCon;
+    private Integer numeroHermanos;
+    private String colorAlma;
+    private URL familiograma;
 }
 

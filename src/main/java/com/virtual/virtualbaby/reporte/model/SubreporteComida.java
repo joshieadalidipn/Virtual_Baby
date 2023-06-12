@@ -15,8 +15,8 @@ import java.time.LocalTime;
 @NoArgsConstructor
 public class SubreporteComida {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue
+    private Integer id;
 
     @ManyToOne
     @JoinColumn(nullable = false)

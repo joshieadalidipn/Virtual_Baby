@@ -22,7 +22,7 @@ public class UsuarioService {
 
     public List<Role> getRoles(Usuario usuario) {
         List<Role> roles = new ArrayList<>();
-        Integer id = usuario.getId();
+        Long id = usuario.getId();
 
         if (existsInRepository(usuarioRepository, id)) {
             roles.add(Role.USUARIO);
@@ -51,7 +51,7 @@ public class UsuarioService {
         return roles;
     }
 
-    private boolean existsInRepository(JpaRepository<?, Integer> repository, Integer id) {
+    private boolean existsInRepository(JpaRepository<?, Long> repository, Long id) {
         return repository.existsById(id);
     }
 

@@ -41,7 +41,7 @@ public class TutorController {
         Usuario user = usuarioRepository.findByEmail(email)
                 .orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado"));
 
-        return ResponseEntity.ok(infanteRepository.findByIdTutor(user.getId()));
+        return ResponseEntity.ok(infanteRepository.findByTutor(user));
     }
 
 
