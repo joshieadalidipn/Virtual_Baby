@@ -176,7 +176,7 @@ function generarRegistros(opcion){
             console.log('No se encontró coincidencia con el id');
         }
     });
-};
+}
 
 function marcarAsistencia() {
     const fecha = new Date();

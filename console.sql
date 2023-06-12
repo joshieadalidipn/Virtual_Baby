@@ -24,9 +24,9 @@ CREATE TABLE usuario
 CREATE TABLE Tutor
 (
     id_usuario        INTEGER PRIMARY KEY REFERENCES usuario (id_usuario),
-    fecha_bautizo     DATE,        -- Fecha de bautizo del usuario si es tutor.
-    telefono_trabajo  VARCHAR(15), -- Teléfono del trabajo del usuario si es tutor.
-    domicilio_trabajo VARCHAR(80), -- Dirección del trabajo del usuario si es tutor.
+    fecha_bautizo     DATE,        -- Fecha de bautizo del usuario si es designado.
+    telefono_trabajo  VARCHAR(15), -- Teléfono del trabajo del usuario si es designado.
+    domicilio_trabajo VARCHAR(80), -- Dirección del trabajo del usuario si es designado.
     foto              BLOB         -- Foto del usuario en formato blob.
 );
 create table Salon
