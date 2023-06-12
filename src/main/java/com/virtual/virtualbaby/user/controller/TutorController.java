@@ -1,8 +1,8 @@
 package com.virtual.virtualbaby.user.controller;
 
 import com.virtual.virtualbaby.auth.security.JwtService;
-import com.virtual.virtualbaby.infante.Infante;
-import com.virtual.virtualbaby.infante.InfanteRepository;
+import com.virtual.virtualbaby.infante.model.Infante;
+import com.virtual.virtualbaby.infante.repository.InfanteRepository;
 import com.virtual.virtualbaby.user.model.Tutor;
 import com.virtual.virtualbaby.user.model.Usuario;
 import com.virtual.virtualbaby.user.repository.TutorRepository;

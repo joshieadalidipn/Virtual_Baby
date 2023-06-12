@@ -7,7 +7,7 @@ import lombok.EqualsAndHashCode;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-@Entity(name = "medico")
+@Entity
 @PrimaryKeyJoinColumn(referencedColumnName = "id")
 
 public class Medico extends Usuario {

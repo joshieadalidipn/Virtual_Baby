@@ -1,7 +1,7 @@
 package com.virtual.virtualbaby.infante.controller;
 
-import com.virtual.virtualbaby.infante.Infante;
-import com.virtual.virtualbaby.infante.InfanteRepository;
+import com.virtual.virtualbaby.infante.model.Infante;
+import com.virtual.virtualbaby.infante.repository.InfanteRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
