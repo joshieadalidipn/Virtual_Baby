@@ -14,7 +14,7 @@ import java.util.List;
 @Service
 public class UsuarioService {
     private final UsuarioRepository usuarioRepository;
-    private final TutorRepository tutorRepository;
+    private final DesignadoRepository designadoRepository;
     private final TrabajadorSocialRepository trabajadorSocialRepository;
     private final CapitalHumanoRepository capitalHumanoRepository;
     private final DocenteRepository docenteRepository;
@@ -28,7 +28,7 @@ public class UsuarioService {
             roles.add(Role.USUARIO);
         }
 
-        if (existsInRepository(tutorRepository, id)) {
+        if (existsInRepository(designadoRepository, id)) {
             roles.add(Role.TUTOR);
         }
 

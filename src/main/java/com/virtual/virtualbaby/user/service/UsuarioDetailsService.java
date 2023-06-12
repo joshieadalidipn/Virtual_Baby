@@ -3,8 +3,8 @@ package com.virtual.virtualbaby.user.service;
 import com.virtual.virtualbaby.role.Role;
 import com.virtual.virtualbaby.user.model.Usuario;
 import com.virtual.virtualbaby.user.repository.UsuarioRepository;
-import com.virtual.virtualbaby.user.service.UsuarioService;
 import lombok.RequiredArgsConstructor;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -21,7 +21,7 @@ public class UsuarioDetailsService implements UserDetailsService {
     private final UsuarioRepository usuarioRepository;
     private final UsuarioService usuarioService;
 
-    public List<SimpleGrantedAuthority> toSimpleGrantedAuthorities(List<Role> roles) {
+    public List<SimpleGrantedAuthority> toSimpleGrantedAuthorities(@NotNull List<Role> roles) {
         return roles.stream().map(role -> new SimpleGrantedAuthority(role.name())).collect(Collectors.toList());
     }
 
