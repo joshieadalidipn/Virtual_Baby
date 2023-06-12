@@ -1,6 +1,6 @@
-package com.virtual.virtualbaby.user.repository;
+package com.virtual.virtualbaby.usuario.repository;
 
-import com.virtual.virtualbaby.user.model.CapitalHumano;
+import com.virtual.virtualbaby.usuario.model.CapitalHumano;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CapitalHumanoRepository extends JpaRepository<CapitalHumano, Long> {

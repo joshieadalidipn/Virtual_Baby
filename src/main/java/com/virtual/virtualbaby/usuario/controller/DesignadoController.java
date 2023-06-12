@@ -1,10 +1,10 @@
-package com.virtual.virtualbaby.user.controller;
+package com.virtual.virtualbaby.usuario.controller;
 
 import com.virtual.virtualbaby.auth.security.JwtService;
 import com.virtual.virtualbaby.infante.model.Infante;
 import com.virtual.virtualbaby.infante.repository.InfanteRepository;
-import com.virtual.virtualbaby.user.model.Usuario;
-import com.virtual.virtualbaby.user.repository.UsuarioRepository;
+import com.virtual.virtualbaby.usuario.model.Usuario;
+import com.virtual.virtualbaby.usuario.repository.TutorRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +19,7 @@ import java.util.List;
 @RequestMapping("/designado")
 @RequiredArgsConstructor
 public class DesignadoController {
-    private final UsuarioRepository usuarioRepository;
+    private final TutorRepository tutorRepository;
     private final InfanteRepository infanteRepository;
     private final JwtService jwtService;
 
@@ -30,7 +30,7 @@ public class DesignadoController {
         String email = jwtService.extractEmail(jwt);
 
         // Buscar al usuario en la base de datos y lanzar una excepción si no se encuentra
-        Usuario user = usuarioRepository.findByEmail(email)
+        Usuario user = tutorRepository.findByEmail(email)
                 .orElseThrow(() -> new UsernameNotFoundException("Tutor no encontrado"));
 
         return ResponseEntity.ok(infanteRepository.findByTutor(user));

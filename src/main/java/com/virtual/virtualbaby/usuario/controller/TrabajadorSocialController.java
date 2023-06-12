@@ -1,4 +1,4 @@
-package com.virtual.virtualbaby.user.controller;
+package com.virtual.virtualbaby.usuario.controller;
 
 import com.virtual.virtualbaby.infante.model.Infante;
 import com.virtual.virtualbaby.infante.repository.InfanteRepository;

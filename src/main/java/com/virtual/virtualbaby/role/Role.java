@@ -1,8 +1,8 @@
 package com.virtual.virtualbaby.role;
 
 public enum Role {
-    USUARIO,
     TUTOR,
+    DESIGNADO,
     DOCENTE,
     MEDICO,
     CAPITAL_HUMANO,

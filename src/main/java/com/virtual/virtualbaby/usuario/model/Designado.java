@@ -1,4 +1,4 @@
-package com.virtual.virtualbaby.user.model;
+package com.virtual.virtualbaby.usuario.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.PrimaryKeyJoinColumn;

@@ -1,6 +1,6 @@
-package com.virtual.virtualbaby.user.repository;
+package com.virtual.virtualbaby.usuario.repository;
 
-import com.virtual.virtualbaby.user.model.Usuario;
+import com.virtual.virtualbaby.usuario.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

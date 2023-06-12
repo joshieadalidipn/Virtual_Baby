@@ -1,6 +1,6 @@
 package com.virtual.virtualbaby.infante.model;
 
-import com.virtual.virtualbaby.user.model.Usuario;
+import com.virtual.virtualbaby.usuario.model.Usuario;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

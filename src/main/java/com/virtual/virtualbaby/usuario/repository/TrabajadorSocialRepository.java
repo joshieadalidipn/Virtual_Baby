@@ -1,6 +1,6 @@
-package com.virtual.virtualbaby.user.repository;
+package com.virtual.virtualbaby.usuario.repository;
 
-import com.virtual.virtualbaby.user.model.TrabajadorSocial;
+import com.virtual.virtualbaby.usuario.model.TrabajadorSocial;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface TrabajadorSocialRepository extends JpaRepository<TrabajadorSocial, Long> {

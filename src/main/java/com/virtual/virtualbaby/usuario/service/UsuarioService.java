@@ -1,8 +1,8 @@
-package com.virtual.virtualbaby.user.service;
+package com.virtual.virtualbaby.usuario.service;
 
 import com.virtual.virtualbaby.role.Role;
-import com.virtual.virtualbaby.user.model.Usuario;
-import com.virtual.virtualbaby.user.repository.*;
+import com.virtual.virtualbaby.usuario.model.Usuario;
+import com.virtual.virtualbaby.usuario.repository.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
@@ -13,8 +13,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @Service
 public class UsuarioService {
-    private final UsuarioRepository usuarioRepository;
-    private final DesignadoRepository designadoRepository;
+    private final DesignadoRepository tutorRepository;
     private final TrabajadorSocialRepository trabajadorSocialRepository;
     private final CapitalHumanoRepository capitalHumanoRepository;
     private final DocenteRepository docenteRepository;
@@ -24,11 +23,7 @@ public class UsuarioService {
         List<Role> roles = new ArrayList<>();
         Long id = usuario.getId();
 
-        if (existsInRepository(usuarioRepository, id)) {
-            roles.add(Role.USUARIO);
-        }
-
-        if (existsInRepository(designadoRepository, id)) {
+        if (existsInRepository(tutorRepository, id)) {
             roles.add(Role.TUTOR);
         }
 

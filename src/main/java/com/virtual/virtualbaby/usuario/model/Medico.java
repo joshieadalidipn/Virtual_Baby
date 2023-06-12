@@ -1,4 +1,4 @@
-package com.virtual.virtualbaby.user.model;
+package com.virtual.virtualbaby.usuario.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.PrimaryKeyJoinColumn;
@@ -9,6 +9,6 @@ import lombok.EqualsAndHashCode;
 @Data
 @Entity
 @PrimaryKeyJoinColumn(referencedColumnName = "id")
-public class CapitalHumano extends Usuario {
 
+public class Medico extends Usuario {
 }

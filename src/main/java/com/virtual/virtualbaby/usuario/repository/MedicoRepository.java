@@ -1,6 +1,6 @@
-package com.virtual.virtualbaby.user.repository;
+package com.virtual.virtualbaby.usuario.repository;
 
-import com.virtual.virtualbaby.user.model.Medico;
+import com.virtual.virtualbaby.usuario.model.Medico;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface MedicoRepository extends JpaRepository<Medico, Long> {

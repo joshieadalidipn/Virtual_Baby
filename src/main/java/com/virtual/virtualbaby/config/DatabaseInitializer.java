@@ -12,8 +12,8 @@ import com.virtual.virtualbaby.reporte.repository.ReporteDiarioRepository;
 import com.virtual.virtualbaby.reporte.repository.SubreporteComidaRepository;
 import com.virtual.virtualbaby.reporte.repository.SubreporteEvacuacionRepository;
 import com.virtual.virtualbaby.reporte.repository.SubreporteObservacionesRepository;
-import com.virtual.virtualbaby.user.model.Usuario;
-import com.virtual.virtualbaby.user.repository.UsuarioRepository;
+import com.virtual.virtualbaby.usuario.model.Tutor;
+import com.virtual.virtualbaby.usuario.repository.TutorRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -26,7 +26,7 @@ import java.time.LocalTime;
 @Component
 public class DatabaseInitializer implements CommandLineRunner {
 
-    private final UsuarioRepository usuarioRepository;
+    private final TutorRepository tutorRepository;
     private final InfanteRepository infanteRepository;
     private final SalonRepository salonRepository;
     private final GrupoRepository grupoRepository;
@@ -57,15 +57,16 @@ public class DatabaseInitializer implements CommandLineRunner {
         grupoRepository.save(grupo3);
         grupoRepository.save(grupo4);
 
-        Usuario tutor1 = Usuario.builder().nombre("Josué Adalid").primerApellido("Juárez").segundoApellido("Botello").email("josueadalidjb@gmail.com").password(passwordEncoder.encode("Joshie9750.")).build();
-        Usuario tutor2 = Usuario.builder().nombre("Eidan Owen").primerApellido("Plata").segundoApellido("Salinas").email("eidan.plasa@gmail.com").password(passwordEncoder.encode("Joshie9750.")).build();
-        Usuario tutor3 = Usuario.builder().nombre("Rodrigo").primerApellido("Trejo").segundoApellido("Arriaga").email("rodrigo.gerardo.trejo.arriaga@gmail.com").password(passwordEncoder.encode("Rodrigo")).build();
-        Usuario tutor4 = Usuario.builder().nombre("Ángel").primerApellido("Hernández").segundoApellido("Hernández").email("angelhh@gmail.com").password(passwordEncoder.encode("Angel.")).build();
+        Tutor tutor1 = Tutor.builder().nombre("Josué Adalid").primerApellido("Juárez").segundoApellido("Botello").email("josueadalidjb@gmail.com").password(passwordEncoder.encode("Joshie9750.")).build();
+        Tutor tutor2 = Tutor.builder().nombre("Eidan Owen").primerApellido("Plata").segundoApellido("Salinas").email("eidan.plasa@gmail.com").password(passwordEncoder.encode("Joshie9750.")).build();
+        Tutor tutor3 = Tutor.builder().nombre("Rodrigo").primerApellido("Trejo").segundoApellido("Arriaga").email("rodrigo.gerardo.trejo.arriaga@gmail.com").password(passwordEncoder.encode("Rodrigo")).build();
+        Tutor tutor4 = Tutor.builder().nombre("Ángel").primerApellido("Hernández").segundoApellido("Hernández").email("angelhh@gmail.com").password(passwordEncoder.encode("Angel.")).build();
 
-        usuarioRepository.save(tutor1);
-        usuarioRepository.save(tutor2);
-        usuarioRepository.save(tutor3);
-        usuarioRepository.save(tutor4);
+
+        tutorRepository.save(tutor1);
+        tutorRepository.save(tutor2);
+        tutorRepository.save(tutor3);
+        tutorRepository.save(tutor4);
 
         Infante infante1 = Infante.builder().nombre("Juan").primerApellido("Pérez").segundoApellido("Sánchez").grupo(grupo1).tutor(tutor1).build();
         Infante infante2 = Infante.builder().nombre("Juana").primerApellido("Pérez").segundoApellido("Sánchez").grupo(grupo2).tutor(tutor1).build();

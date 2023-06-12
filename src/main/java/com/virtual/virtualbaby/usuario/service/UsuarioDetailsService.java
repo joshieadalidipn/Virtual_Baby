@@ -1,8 +1,8 @@
-package com.virtual.virtualbaby.user.service;
+package com.virtual.virtualbaby.usuario.service;
 
 import com.virtual.virtualbaby.role.Role;
-import com.virtual.virtualbaby.user.model.Usuario;
-import com.virtual.virtualbaby.user.repository.UsuarioRepository;
+import com.virtual.virtualbaby.usuario.model.Usuario;
+import com.virtual.virtualbaby.usuario.repository.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

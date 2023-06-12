@@ -1,8 +1,8 @@
-package com.virtual.virtualbaby.user.controller;
+package com.virtual.virtualbaby.usuario.controller;
 
-import com.virtual.virtualbaby.user.repository.CapitalHumanoRepository;
-import com.virtual.virtualbaby.user.model.Usuario;
-import com.virtual.virtualbaby.user.repository.UsuarioRepository;
+import com.virtual.virtualbaby.usuario.model.Usuario;
+import com.virtual.virtualbaby.usuario.repository.CapitalHumanoRepository;
+import com.virtual.virtualbaby.usuario.repository.UsuarioRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;

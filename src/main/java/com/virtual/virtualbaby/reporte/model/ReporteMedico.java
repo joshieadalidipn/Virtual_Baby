@@ -1,7 +1,7 @@
 package com.virtual.virtualbaby.reporte.model;
 
 import com.virtual.virtualbaby.infante.model.Infante;
-import com.virtual.virtualbaby.user.model.Medico;
+import com.virtual.virtualbaby.usuario.model.Medico;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
