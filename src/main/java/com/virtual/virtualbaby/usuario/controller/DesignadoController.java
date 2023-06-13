@@ -3,7 +3,7 @@ package com.virtual.virtualbaby.usuario.controller;
 import com.virtual.virtualbaby.auth.security.JwtService;
 import com.virtual.virtualbaby.infante.model.Infante;
 import com.virtual.virtualbaby.infante.repository.InfanteRepository;
-import com.virtual.virtualbaby.usuario.model.Usuario;
+import com.virtual.virtualbaby.usuario.model.Tutor;
 import com.virtual.virtualbaby.usuario.repository.TutorRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
@@ -30,10 +30,10 @@ public class DesignadoController {
         String email = jwtService.extractEmail(jwt);
 
         // Buscar al usuario en la base de datos y lanzar una excepción si no se encuentra
-        Usuario user = tutorRepository.findByEmail(email)
+        Tutor tutor = tutorRepository.findTutorByUsuarioEmail(email)
                 .orElseThrow(() -> new UsernameNotFoundException("Tutor no encontrado"));
 
-        return ResponseEntity.ok(infanteRepository.findByTutor(user));
+        return ResponseEntity.ok(infanteRepository.findByTutor(tutor));
     }
 
 

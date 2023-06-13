@@ -1,18 +1,23 @@
 package com.virtual.virtualbaby.usuario.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.PrimaryKeyJoinColumn;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
 
-@SuperBuilder
-@NoArgsConstructor
-@EqualsAndHashCode(callSuper = true)
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
-@PrimaryKeyJoinColumn(referencedColumnName = "id")
-public class Tutor extends Usuario {
+public class Tutor {
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    @OneToOne
+    @JoinColumn(name = "id")
+    private Usuario usuario;
 
 }

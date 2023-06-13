@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @RequiredArgsConstructor
 @Service
@@ -20,34 +21,17 @@ public class UsuarioService {
     private final MedicoRepository medicoRepository;
 
     public List<Role> getRoles(Usuario usuario) {
-        List<Role> roles = new ArrayList<>();
         Long id = usuario.getId();
+        List<Role> roles = new ArrayList<>();
 
-        if (existsInRepository(tutorRepository, id)) {
-            roles.add(Role.TUTOR);
-        }
+        Map<JpaRepository<?, Long>, Role> repositoryRoleMap = Map.of(tutorRepository, Role.TUTOR, trabajadorSocialRepository, Role.TRABAJADOR_SOCIAL, capitalHumanoRepository, Role.CAPITAL_HUMANO, docenteRepository, Role.DOCENTE, medicoRepository, Role.MEDICO);
 
-        if (existsInRepository(trabajadorSocialRepository, id)) {
-            roles.add(Role.TRABAJADOR_SOCIAL);
-        }
-
-        if (existsInRepository(capitalHumanoRepository, id)) {
-            roles.add(Role.CAPITAL_HUMANO);
-        }
-
-        if (existsInRepository(docenteRepository, id)) {
-            roles.add(Role.DOCENTE);
-        }
-
-        if (existsInRepository(medicoRepository, id)) {
-            roles.add(Role.MEDICO);
+        for (Map.Entry<JpaRepository<?, Long>, Role> entry : repositoryRoleMap.entrySet()) {
+            if (entry.getKey().existsById(id)) {
+                roles.add(entry.getValue());
+            }
         }
 
         return roles;
     }
-
-    private boolean existsInRepository(JpaRepository<?, Long> repository, Long id) {
-        return repository.existsById(id);
-    }
-
 }

@@ -1,6 +1,6 @@
 package com.virtual.virtualbaby.infante.model;
 
-import com.virtual.virtualbaby.usuario.model.Usuario;
+import com.virtual.virtualbaby.usuario.model.Tutor;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -24,7 +24,7 @@ public class Infante {
     private Grupo grupo;
     @ManyToOne
     @JoinColumn(nullable = false)
-    private Usuario tutor;
+    private Tutor tutor;
     private String nombre;
     private String primerApellido;
     private String segundoApellido;

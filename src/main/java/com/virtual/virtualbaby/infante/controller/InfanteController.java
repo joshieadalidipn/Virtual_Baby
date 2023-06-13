@@ -6,7 +6,6 @@ import com.virtual.virtualbaby.infante.repository.InfanteRepository;
 import com.virtual.virtualbaby.reporte.model.ReporteDiario;
 import com.virtual.virtualbaby.reporte.repository.ReporteDiarioRepository;
 import com.virtual.virtualbaby.usuario.model.Tutor;
-import com.virtual.virtualbaby.usuario.model.Usuario;
 import com.virtual.virtualbaby.usuario.repository.TutorRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;
@@ -31,7 +30,7 @@ public class InfanteController {
     private final JwtService jwtService;
     private final TutorRepository tutorRepository;
 
-    @PreAuthorize("hasAnyAuthority('DOCENTE')")
+    @PreAuthorize("hasAnyAuthority('DOCENTE','TRABAJADOR_SOCIAL')")
     @GetMapping("/{id}")
     public ResponseEntity<Infante> getInfanteById(@PathVariable Long id) {
         Optional<Infante> optionalInfante = infanteRepository.findById(id);
@@ -53,16 +52,16 @@ public class InfanteController {
         String email = jwtService.extractEmail(jwt);
 
         // Buscar al usuario en la base de datos
-        Optional<Tutor> userOpt = tutorRepository.findByEmail(email);
+        Optional<Tutor> tutorDatabase = tutorRepository.findTutorByUsuarioEmail(email);
         // Si el usuario no se encontró, lanzar una excepción
-        Usuario user = userOpt.orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado"));
+        Tutor founded = tutorDatabase.orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado"));
 
         // Buscar el infante en la base de datos
         Optional<Infante> infanteOpt = infanteRepository.findById(infanteId);
         Infante infante = infanteOpt.orElseThrow(() -> new RuntimeException("Infante no encontrado"));
 
         // Verificar que el usuario es el tutor del infante
-        if (!infante.getTutor().equals(user)) {
+        if (!infante.getTutor().equals(founded)) {
             return new ResponseEntity<>(HttpStatus.FORBIDDEN);
         }
 

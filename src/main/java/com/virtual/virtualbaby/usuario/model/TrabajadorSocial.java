@@ -1,15 +1,23 @@
 package com.virtual.virtualbaby.usuario.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.PrimaryKeyJoinColumn;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
-@EqualsAndHashCode(callSuper = true)
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
-@PrimaryKeyJoinColumn(referencedColumnName = "id")
+public class TrabajadorSocial {
 
-public class TrabajadorSocial extends Usuario {
+    @Id
+    @GeneratedValue
+    private Long id;
 
+    @OneToOne//(cascade = CascadeType.ALL)
+    @JoinColumn(referencedColumnName = "id")
+    private Usuario usuario;
 }
