@@ -13,7 +13,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @Service
 public class UsuarioService {
-    private final DesignadoRepository tutorRepository;
+    private final TutorRepository tutorRepository;
     private final TrabajadorSocialRepository trabajadorSocialRepository;
     private final CapitalHumanoRepository capitalHumanoRepository;
     private final DocenteRepository docenteRepository;
