@@ -8,16 +8,16 @@ import com.virtual.virtualbaby.infante.repository.InfanteRepository;
 import com.virtual.virtualbaby.infante.repository.SalonRepository;
 import com.virtual.virtualbaby.reporte.model.ReporteDiario;
 import com.virtual.virtualbaby.reporte.model.SubreporteComida;
+import com.virtual.virtualbaby.reporte.model.SubreporteEvacuacion;
 import com.virtual.virtualbaby.reporte.repository.ReporteDiarioRepository;
 import com.virtual.virtualbaby.reporte.repository.SubreporteComidaRepository;
 import com.virtual.virtualbaby.reporte.repository.SubreporteEvacuacionRepository;
 import com.virtual.virtualbaby.reporte.repository.SubreporteObservacionesRepository;
+import com.virtual.virtualbaby.usuario.model.Docente;
 import com.virtual.virtualbaby.usuario.model.TrabajadorSocial;
 import com.virtual.virtualbaby.usuario.model.Tutor;
 import com.virtual.virtualbaby.usuario.model.Usuario;
-import com.virtual.virtualbaby.usuario.repository.TrabajadorSocialRepository;
-import com.virtual.virtualbaby.usuario.repository.TutorRepository;
-import com.virtual.virtualbaby.usuario.repository.UsuarioRepository;
+import com.virtual.virtualbaby.usuario.repository.*;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -33,15 +33,23 @@ public class DatabaseInitializer implements CommandLineRunner {
     // Privilegios usuario
     private final UsuarioRepository usuarioRepository;
     private final TutorRepository tutorRepository;
-    private final InfanteRepository infanteRepository;
     private final TrabajadorSocialRepository trabajadorSocialRepository;
-    private final SalonRepository salonRepository;
-    private final GrupoRepository grupoRepository;
-    private final PasswordEncoder passwordEncoder;
+    private final CapitalHumanoRepository capitalHumanoRepository;
+    private final DocenteRepository docenteRepository;
+    private final MedicoRepository medicoRepository;
+    // Reportes
     private final ReporteDiarioRepository reporteDiarioRepository;
     private final SubreporteComidaRepository subreporteComidaRepository;
     private final SubreporteEvacuacionRepository subreporteEvacuacionRepository;
     private final SubreporteObservacionesRepository subreporteObservacionesRepository;
+    // Infantes
+    private final InfanteRepository infanteRepository;
+    private final SalonRepository salonRepository;
+    private final GrupoRepository grupoRepository;
+
+    // Servicio de cifrado
+    private final PasswordEncoder passwordEncoder;
+
 
     @Override
     public void run(String... args) throws Exception {
@@ -77,7 +85,7 @@ public class DatabaseInitializer implements CommandLineRunner {
         usuarioRepository.save(usuario4);
         trabajadorSocialRepository.save(TrabajadorSocial.builder().usuario(usuario1).build());
         Tutor tutor1 = tutorRepository.save(Tutor.builder().usuario(usuario1).build());
-
+        docenteRepository.save(Docente.builder().usuario(usuario1).build());
         Infante infante1 = Infante.builder().nombre("Juan").primerApellido("Pérez").segundoApellido("Sánchez").grupo(grupo1).tutor(tutor1).build();
         Infante infante2 = Infante.builder().nombre("Juana").primerApellido("Pérez").segundoApellido("Sánchez").grupo(grupo2).tutor(tutor1).build();
 
@@ -85,12 +93,14 @@ public class DatabaseInitializer implements CommandLineRunner {
         infanteRepository.save(infante2);
 
         ReporteDiario reporteDiario1 = ReporteDiario.builder().infante(infante1).fecha(LocalDate.now()).horaEntrada(LocalTime.MIN).horaSalida(LocalTime.MIDNIGHT).build();
-        ReporteDiario reporteDiario2 = ReporteDiario.builder().infante(infante1).fecha(LocalDate.now()).horaEntrada(LocalTime.MIN).horaSalida(LocalTime.MIDNIGHT).build();
+        ReporteDiario reporteDiario2 = ReporteDiario.builder().infante(infante2).fecha(LocalDate.now()).horaEntrada(LocalTime.MAX).horaSalida(LocalTime.MIDNIGHT).build();
         reporteDiarioRepository.save(reporteDiario1);
         reporteDiarioRepository.save(reporteDiario2);
 
         SubreporteComida subreporteComida1 = SubreporteComida.builder().comida("Deliciosa").cantidad(3).reporteDiario(reporteDiario1).build();
+        SubreporteEvacuacion subreporteEvacuacion1 = SubreporteEvacuacion.builder().tipoEvacuacion("Excelente").hora(LocalTime.now()).build();
         subreporteComidaRepository.save(subreporteComida1);
+        //subreporteEvacuacionRepository.save(subreporteEvacuacion1);
     }
 
 }

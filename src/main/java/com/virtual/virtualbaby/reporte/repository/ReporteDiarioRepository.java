@@ -4,8 +4,11 @@ import com.virtual.virtualbaby.infante.model.Infante;
 import com.virtual.virtualbaby.reporte.model.ReporteDiario;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public interface ReporteDiarioRepository extends JpaRepository<ReporteDiario, Long> {
-    List<ReporteDiario> findByInfante(Infante infante);
+    List<ReporteDiario> findAllByInfante(Infante infante);
+
+    List<ReporteDiario> findAllByInfanteAndFecha(Infante infante, LocalDate fecha);
 }

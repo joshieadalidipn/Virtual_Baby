@@ -1,5 +1,6 @@
 package com.virtual.virtualbaby.reporte.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.virtual.virtualbaby.infante.model.Infante;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -30,4 +31,16 @@ public class ReporteDiario {
 
     @ElementCollection
     private List<String> pertenencias;
+
+    // Agregamos las relaciones con las entidades Subreporte
+    @JsonManagedReference
+    @OneToMany(mappedBy = "reporteDiario")
+    private List<SubreporteComida> subreportesComida;
+    @JsonManagedReference
+    @OneToMany(mappedBy = "reporteDiario")
+    private List<SubreporteEvacuacion> subreportesEvacuacion;
+    @JsonManagedReference
+    @OneToMany(mappedBy = "reporteDiario")
+    private List<SubreporteObservaciones> subreportesObservaciones;
 }
+

@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -45,9 +46,9 @@ public class InfanteController {
     }
 
 
-    @GetMapping("/reportes/{infanteId}")
+    @GetMapping("/reportes/{infanteId}/{fecha}")
     @PreAuthorize("hasAuthority('TUTOR')")
-    public ResponseEntity<List<ReporteDiario>> getReportesDelInfante(HttpServletRequest request, @PathVariable Long infanteId) {
+    public ResponseEntity<List<ReporteDiario>> getReportesDelInfante(HttpServletRequest request, @PathVariable Long infanteId, @PathVariable LocalDate fecha) {
         String jwt = jwtService.extractJwtFromRequest(request);
         String email = jwtService.extractEmail(jwt);
 
@@ -66,7 +67,7 @@ public class InfanteController {
         }
 
         // Obtener los reportes del infante
-        List<ReporteDiario> reportes = reporteDiarioRepository.findByInfante(infante);
+        List<ReporteDiario> reportes = reporteDiarioRepository.findAllByInfanteAndFecha(infante, fecha);
 
         return ResponseEntity.ok(reportes);
     }
