@@ -8,34 +8,32 @@ document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector('form');
     form.addEventListener('submit', function (e) {
         e.preventDefault();
-        const fecha = document.getElementById('frep').value;
-        getInfanteReporte(fecha, jwt);
+        const fecha = document.getElementById('fecha_reporte').value;
+        getInfanteReporte(fecha, jwt)
+            .then(data => fillReport(data))
+            .catch(error => console.error('Error:', error));
     });
 });
 
 
-function getInfanteReporte(fecha, jwt) {
-    fetch(`/infante/reportes/1/${fecha}`, {
+async function getInfanteReporte(fecha, jwt) {
+    const response = await fetch(`/infante/reportes/1/${fecha}`, {
         headers: {
             'Authorization': `Bearer ${jwt}`
         }
-    })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Respuesta de red no fue ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            fillReport(data);
-        })
-        .catch(error => console.error('Error:', error));
+    });
+
+    if (!response.ok) {
+        throw new Error('Respuesta de red no fue ok');
+    }
+
+    return await response.json();
 }
 
 function fillReport(data) {
-    const tablaComidas = document.getElementById('comidaprint');
-    const tablaEvacuaciones = document.getElementById('evaprint');
-    const tablaObservaciones = document.getElementById('obsprint');
+    const tablaComidas = document.getElementById('tabla_comidas');
+    const tablaEvacuaciones = document.getElementById('tabla_evacuaciones');
+    const tablaObservaciones = document.getElementById('tabla_observaciones');
     console.log(data);
     // Limpiar las tablas
     tablaComidas.getElementsByTagName('tbody')[0].innerHTML = '';
@@ -55,4 +53,3 @@ function fillReport(data) {
         tablaObservaciones.getElementsByTagName('tbody')[0].innerHTML += `<tr><td>${anexo.hora}</td><td>${anexo.descripcion}</td></tr>`;
     });
 }
-
