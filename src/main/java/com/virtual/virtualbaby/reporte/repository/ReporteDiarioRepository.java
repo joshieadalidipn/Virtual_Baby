@@ -10,5 +10,7 @@ import java.util.List;
 public interface ReporteDiarioRepository extends JpaRepository<ReporteDiario, Long> {
     List<ReporteDiario> findAllByInfante(Infante infante);
 
-    List<ReporteDiario> findAllByInfanteAndFecha(Infante infante, LocalDate fecha);
+    List<ReporteDiario> findAllByInfanteIdAndFecha(Long id, LocalDate fecha);
+
+    List<ReporteDiario> findAllByFecha(LocalDate fecha);
 }

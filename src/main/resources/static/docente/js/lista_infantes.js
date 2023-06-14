@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const infantesData = sessionStorage.getItem('infantesData');
 
     if (!infantesData) {
-        fetch('/infante/', {
+        fetch('/infantes/', {
             headers: {
                 'Authorization': `Bearer ${jwt}`
             }

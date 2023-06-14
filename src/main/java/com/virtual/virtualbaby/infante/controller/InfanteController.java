@@ -5,14 +5,13 @@ import com.virtual.virtualbaby.infante.model.Infante;
 import com.virtual.virtualbaby.infante.repository.InfanteRepository;
 import com.virtual.virtualbaby.reporte.model.ReporteDiario;
 import com.virtual.virtualbaby.reporte.repository.ReporteDiarioRepository;
-import com.virtual.virtualbaby.usuario.model.Tutor;
-import com.virtual.virtualbaby.usuario.repository.TutorRepository;
+import com.virtual.virtualbaby.usuario.service.ForbiddenException;
+import com.virtual.virtualbaby.usuario.service.TutorService;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -26,8 +25,7 @@ public class InfanteController {
     private final InfanteRepository infanteRepository;
     private final ReporteDiarioRepository reporteDiarioRepository;
     private final JwtService jwtService;
-    private final TutorRepository tutorRepository;
-
+    private final TutorService tutorService;
     @PreAuthorize("hasAnyAuthority('DOCENTE','TRABAJADOR_SOCIAL')")
     @GetMapping("/{id}")
     public ResponseEntity<Infante> getInfanteById(@PathVariable Long id) {
@@ -52,30 +50,25 @@ public class InfanteController {
 
     @GetMapping("/{infanteId}/reportes/{fecha}")
     @PreAuthorize("hasAuthority('TUTOR')")
-    public ResponseEntity<List<ReporteDiario>> getReportesDelInfante(HttpServletRequest request, @PathVariable Long infanteId, @PathVariable LocalDate fecha) {
-        String jwt = jwtService.extractJwtFromRequest(request);
-        String email = jwtService.extractEmail(jwt);
-
-        // Buscar al usuario en la base de datos
-        Optional<Tutor> tutorDatabase = tutorRepository.findTutorByUsuarioEmail(email);
-        // Si el usuario no se encontró, lanzar una excepción
-        Tutor founded = tutorDatabase.orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado"));
-
-        // Buscar el infante en la base de datos
-        Optional<Infante> infanteOpt = infanteRepository.findById(infanteId);
-        Infante infante = infanteOpt.orElseThrow(() -> new RuntimeException("Infante no encontrado"));
-
-        // Verificar que el usuario es el tutor del infante
-        if (!infante.getTutor().equals(founded)) {
-            return new ResponseEntity<>(HttpStatus.FORBIDDEN);
-        }
-
-        // Obtener los reportes del infante
-        List<ReporteDiario> reportes = reporteDiarioRepository.findAllByInfanteAndFecha(infante, fecha);
-
+    public ResponseEntity<List<ReporteDiario>> getReportesDiariosFromAuthorizedTutor(HttpServletRequest request, @PathVariable Long infanteId, @PathVariable LocalDate fecha) throws ForbiddenException {
+        String email = jwtService.extractEmail(jwtService.extractJwtFromRequest(request));
+        List<ReporteDiario> reportes = tutorService.getReportesTutorInfante(email, infanteId, fecha);
         return ResponseEntity.ok(reportes);
     }
 
 
+    @GetMapping("/{infanteId}/reportes")
+    @PreAuthorize("hasAuthority('TUTOR')")
+    public ResponseEntity<List<ReporteDiario>> getReportesDiarios(@PathVariable Long infanteId, @RequestParam LocalDate fecha) {
+        List<ReporteDiario> reportes = reporteDiarioRepository.findAllByInfanteIdAndFecha(infanteId, fecha);
+        return ResponseEntity.ok(reportes);
+    }
+
+    @GetMapping("/reportes/{fecha}")
+    @PreAuthorize("hasAuthority('TUTOR')")
+    public ResponseEntity<List<ReporteDiario>> getReportesDiarios(@PathVariable LocalDate fecha) {
+        List<ReporteDiario> reportes = reporteDiarioRepository.findAllByFecha(fecha);
+        return ResponseEntity.ok(reportes);
+    }
 }
 
