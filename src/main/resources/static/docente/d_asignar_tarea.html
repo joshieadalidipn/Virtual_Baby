@@ -1,218 +1,192 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no'/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="custom.css">
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no'
+          name='viewport'/>
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+          integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+          referrerpolicy="no-referrer" rel="stylesheet"/>
+    <link href="custom.css" rel="stylesheet">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
-        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" rel="stylesheet">
+    <script crossorigin="anonymous"
+            integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+            referrerpolicy="no-referrer"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="js/d_asignar_tareaC.js"></script>
-<meta name="description" content="">
-<meta name="keywords" content="">
-<title>Asignar una tarea</title>
-<style>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <title>Asignar una tarea</title>
+    <style>
 
 
-</style>
+    </style>
 
-<link href="" rel="stylesheet">
+    <link href="" rel="stylesheet">
 </head>
 <body class="b-light g-0">
-    <div id="texto_bg" class="container-fluid mt-2 ms-2 g-0" > <!--Begin main container-->
-        <div id="barra_superior_bg" class="container-fluid g-0"> <!--Begin usernam bar-->
-            <div class="row">
-                <div class="col-9 text-start">
-                    <h1 class="mt-3 mt-sm-0" id="nombreusuarioprint"> NOMBRE DE USUARIO </h1>
-                </div>
-                <div class="col-3 text-end">
-                    <div class="d-flex h-100 align-items-center justify-content-end">
-                        <a href="#" class="btn btn-dark me-4 m-1 px-3 py-3 d-flex justify-content-center align-items-center">
-                            <i class="fa-solid fa-house" style="color: #ffffff;"></i>
-                        </a>
-                    </div>
+<div class="container-fluid mt-2 ms-2 g-0" id="texto_bg"> <!--Begin main container-->
+    <div class="container-fluid g-0" id="barra_superior_bg"> <!--Begin usernam bar-->
+        <div class="row">
+            <div class="col-9 text-start">
+                <h1 class="mt-3 mt-sm-0" id="nombreusuarioprint"> NOMBRE DE USUARIO </h1>
+            </div>
+            <div class="col-3 text-end">
+                <div class="d-flex h-100 align-items-center justify-content-end">
+                    <a class="btn btn-dark me-4 m-1 px-3 py-3 d-flex justify-content-center align-items-center"
+                       href="#">
+                        <i class="fa-solid fa-house" style="color: #ffffff;"></i>
+                    </a>
                 </div>
             </div>
-        </div> <!--End user name bar-->
+        </div>
+    </div> <!--End user name bar-->
 
-        <div id="cuerpo_bg" class="mt-2 container-fluid g-0"> <!--Begin main container-->
-            <div id="barra_arriba" class="row"> <!--Begin creacion de barra de enlaces superior-->
-                <div class="col-0 col-sm-1 text-start">
-                </div>
-                <div class="col-11 col-sm-10 ms-1 ms-sm-0 text-start">
-                    <div id="Barra superior" class="mt-0 mb-3 container-fluid g-0">
-                        <div class="row ">
-                            <!--Agregando los botones para moverse dentro de las cadenas permitidas-->
-                            <div class="col-3"><a href="#"
-                                class="btn btn-secondary me-0 me-sm-4 m-1 px-3 py-1 d-flex justify-content-center align-items-center"><i
-                                    class="fa-solid fa-people-group d-md-none d-inline" style="color: #ffffff;"></i>
-                                <p
-                                    class="text-white m-0 px-0 py-0 d-none d-md-flex justify-content-center align-items-center">
-                                    LISTA DE INFANTES</p>
-                            </a> </div>
+    <div class="mt-2 container-fluid g-0" id="cuerpo_bg"> <!--Begin main container-->
+        <div class="row" id="barra_arriba"></div>
+        <script>
+            window.addEventListener('DOMContentLoaded', function () {
+                fetch('barra_arriba.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('barra_arriba').innerHTML = data;
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+            });
+        </script>
 
-                            <div class="col-3"><a href="#"
-                                class="btn btn-secondary me-0 me-sm-4 m-1 px-3 py-1 d-flex justify-content-center align-items-center"><i
-                                    class="fa-solid fa-people-group d-md-none d-inline" style="color: #ffffff;"></i>
-                                <p
-                                    class="text-white m-0 px-0 py-0 d-none d-md-flex justify-content-center align-items-center">
-                                    AREA DE REPORTES</p>
-                            </a> </div>
-
-                            <div class="col-3"><a href="#"
-                                class="btn btn-secondary me-0 me-sm-4 m-1 px-3 py-1 d-flex justify-content-center align-items-center"><i
-                                    class="fa-solid fa-people-group d-md-none d-inline" style="color: #ffffff;"></i>
-                                <p
-                                    class="text-white m-0 px-0 py-0 d-none d-md-flex justify-content-center align-items-center">
-                                    CALENDARIO GRUPAL</p>
-                            </a> </div>
-
-                            <div class="col-3"><a href="#"
-                                class="btn btn-secondary me-0 me-sm-4 m-1 px-3 py-1 d-flex justify-content-center align-items-center"><i
-                                    class="fa-solid fa-people-group d-md-none d-inline" style="color: #ffffff;"></i>
-                                <p
-                                    class="text-white m-0 px-0 py-0 d-none d-md-flex justify-content-center align-items-center">
-                                    AREA DE TAREAS</p>
-                            </a> </div>
-                        </div>
-                    </div>
-                </div>
-            </div> <!--End creación de botones para la barra superior-->
-
-            <div id="area_cuerpo" class="row"> <!--Mediante la clase row crea una fila que contendrá columnas según el sistema de columnas de Boostrap-->
-                <div class="col-0 col-sm-1 text-start">
-                </div>
-                <div class="col-11 col-sm-10 ms-1 ms-sm-0 text-begin bg-blue shadow-sm rounded-5" > <!--Crea una columna dentro de la fila que ocupará 11 columnas del sistema en dispositivos de 
+        <div class="row" id="area_cuerpo">
+            <!--Mediante la clase row crea una fila que contendrá columnas según el sistema de columnas de Boostrap-->
+            <div class="col-0 col-sm-1 text-start">
+            </div>
+            <div class="col-11 col-sm-10 ms-1 ms-sm-0 text-begin bg-blue shadow-sm rounded-5"> <!--Crea una columna dentro de la fila que ocupará 11 columnas del sistema en dispositivos de
                 tamaño pequeño o mayor, además de generar un redondeo de 5 pixeles de acuerdo con la clase rounded 5-->
-                    <div class="row mb-3">
-                        <div class="col-sm-2 col-md-6 col-xl-9">
-                            <h2 class="text-begin fw-bold d-inline ms-4">CREAR NUEVA TAREA</h2>
-                        </div>
+                <div class="row mb-3">
+                    <div class="col-sm-2 col-md-6 col-xl-9">
+                        <h2 class="text-begin fw-bold d-inline ms-4">CREAR NUEVA TAREA</h2>
                     </div>
-                    
-                    <!--INICIO DEL FORMULARIO PRINCIPAL-->    
-                    <div name="base-de-cuerpo-interno" class="container-fluid g-0">
-                        <div class="row ">
-                            <div class="col-0 col-sm-1"> </div>
-                            <div name="escribe-el-texto-aqui" class="col-12 col-sm-10">
+                </div>
 
-                                <form>
+                <!--INICIO DEL FORMULARIO PRINCIPAL-->
+                <div class="container-fluid g-0" name="base-de-cuerpo-interno">
+                    <div class="row ">
+                        <div class="col-0 col-sm-1"></div>
+                        <div class="col-12 col-sm-10" name="escribe-el-texto-aqui">
 
-                                    <div> <!--Seccion para el titulo del metadato del formulario-->
+                            <form>
 
-                                        <p
+                                <div> <!--Seccion para el titulo del metadato del formulario-->
+
+                                    <p
                                             class="text-black m-0 py-0 d-none d-md-flex align-items-center justify-content-begin titular">
-                                            Asignar a</p>
+                                        Asignar a</p>
 
-                                    </div>
-                                    <div id="asignar-a-grupo " name="asigar-tarea-grupo" class="mt-3 mb-4">
+                                </div>
+                                <div class="mt-3 mb-4" id="asignar-a-grupo " name="asigar-tarea-grupo">
 
-                                        <div class="row"> <!--Primera fila-->
-                                            <div class="col-1 d-flex align-items-center justify-content-center">
-                                                <div><i class="fa-solid fa-users-line fa-4x"></i></div>
-                                            </div>
-                                            <div class="col-3 d-flex align-items-center">
-                                                <select class="form-select" id="grupo-asignar">
-                                                    <option value="">Seleccionar grupo</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-6 d-flex align-items-center">
-                                                <p class="text-black m-0 py-0 d-none d-md-flex align-items-begin justify-content-begin titular "> Fecha: </p>
-                                                <p id="fecha-actual" class="text-black m-0 py-0 d-none d-md-flex align-items-begin justify-content-begin titular ">    fecha_actual: </p>
-                                            </div>
+                                    <div class="row"> <!--Primera fila-->
+                                        <div class="col-1 d-flex align-items-center justify-content-center">
+                                            <div><i class="fa-solid fa-users-line fa-4x"></i></div>
                                         </div>
-                                        <br>
-                                        <div class="row"> <!--Segunda fila-->
-                                            <div class="col-2 d-flex align-items-center justify-content-begin">
-                                                <p
-                                                class="text-black m-0 py-0 d-none d-md-flex align-items-begin justify-content-begin titular">
-                                                Titulo tarea</p>
-                                            </div>
-                                            <div class="col-7 d-flex align-items-begin justify-content-begin">
-                                                <textarea class="form-control" rows="1" id="titulo-tarea" name="nombre-tarea"
-                                                placeholder="..."></textarea>
-                                            </div>
+                                        <div class="col-3 d-flex align-items-center">
+                                            <select class="form-select" id="grupo-asignar">
+                                                <option value="">Seleccionar grupo</option>
+                                            </select>
                                         </div>
-                                        <br>
-                                        <div class="row"> <!--tercer fila-->
-                                            <div class="col-2 d-flex align-items-center justify-content-begin">
-                                                <p
-                                                class="text-black m-0 py-0 d-none d-md-flex align-items-begin justify-content-begin titular">
-                                                Descripcion de la tarea</p>
-                                            </div>
-                                            <div class="col-7 d-flex align-items-begin justify-content-begin">
-                                                <textarea class="form-control" rows="5" id="titulo-tarea" name="nombre-tarea"
-                                                placeholder="..."></textarea>
-                                            </div>
-                                            <div class="col-3 d-flex align-items-begin justify-content-begin">
-                                                <i class="fa-solid fa-book fa-8x"></i>
-                                            </div>
+                                        <div class="col-6 d-flex align-items-center">
+                                            <p class="text-black m-0 py-0 d-none d-md-flex align-items-begin justify-content-begin titular ">
+                                                Fecha: </p>
+                                            <p class="text-black m-0 py-0 d-none d-md-flex align-items-begin justify-content-begin titular "
+                                               id="fecha-actual">
+                                                fecha_actual: </p>
                                         </div>
-                                        <br>
-                                        <div class="row"> <!--cuarta fila-->
-                                            <div class="col-2 d-flex align-items-center justify-content-begin">
-                                                <p
-                                                class="text-black m-0 py-0 d-none d-md-flex align-items-begin justify-content-begin titular">
-                                                Fecha de entrega</p>
-                                            </div>
-                                            <div class="col-5 d-flex align-items-begin justify-content-begin">
-                                                <input type="date" class="form-control mb-3"
-                                                    placeholder="01/01/2001" id="frep" name="frep">
-                                            </div>
-                                        </div>
-
                                     </div>
                                     <br>
-                                    <div name="observaciones generales" class="mt-3 mb-4">
-
-                                        <div class="row">
-                                            <div class="col-1 d-flex align-items-center justify-content-center">
-                                                <div><i class="fa-solid fa-face-smile"
-                                                        style="color: #000000;"></i></div>
-                                            </div>
-                                            <div class="col-11 d-flex align-items-center">
-                                                <textarea class="form-control" rows="1" id="notaf" name="notaf"
-                                                    placeholder="Observaciones adicionales.."></textarea>
-                                            </div>
+                                    <div class="row"> <!--Segunda fila-->
+                                        <div class="col-2 d-flex align-items-center justify-content-begin">
+                                            <p
+                                                    class="text-black m-0 py-0 d-none d-md-flex align-items-begin justify-content-begin titular">
+                                                Titulo tarea</p>
                                         </div>
-
+                                        <div class="col-7 d-flex align-items-begin justify-content-begin">
+                                                <textarea class="form-control" id="titulo-tarea" name="nombre-tarea"
+                                                          placeholder="..."
+                                                          rows="1"></textarea>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row"> <!--tercer fila-->
+                                        <div class="col-2 d-flex align-items-center justify-content-begin">
+                                            <p
+                                                    class="text-black m-0 py-0 d-none d-md-flex align-items-begin justify-content-begin titular">
+                                                Descripcion de la tarea</p>
+                                        </div>
+                                        <div class="col-7 d-flex align-items-begin justify-content-begin">
+                                                <textarea class="form-control" id="titulo-tarea" name="nombre-tarea"
+                                                          placeholder="..."
+                                                          rows="5"></textarea>
+                                        </div>
+                                        <div class="col-3 d-flex align-items-begin justify-content-begin">
+                                            <i class="fa-solid fa-book fa-8x"></i>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row"> <!--cuarta fila-->
+                                        <div class="col-2 d-flex align-items-center justify-content-begin">
+                                            <p
+                                                    class="text-black m-0 py-0 d-none d-md-flex align-items-begin justify-content-begin titular">
+                                                Fecha de entrega</p>
+                                        </div>
+                                        <div class="col-5 d-flex align-items-begin justify-content-begin">
+                                            <input class="form-control mb-3" id="frep"
+                                                   name="frep" placeholder="01/01/2001" type="date">
+                                        </div>
                                     </div>
 
-                                    <div class="text-center mt-3 mb-4" name="submit">
-                                        <button class="btn btn-dark px-4" type="submit">Asignar tarea</button>
+                                </div>
+                                <br>
+                                <div class="mt-3 mb-4" name="observaciones generales">
+
+                                    <div class="row">
+                                        <div class="col-1 d-flex align-items-center justify-content-center">
+                                            <div><i class="fa-solid fa-face-smile"
+                                                    style="color: #000000;"></i></div>
+                                        </div>
+                                        <div class="col-11 d-flex align-items-center">
+                                                <textarea class="form-control" id="notaf" name="notaf"
+                                                          placeholder="Observaciones adicionales.."
+                                                          rows="1"></textarea>
+                                        </div>
                                     </div>
 
-                                </form>
+                                </div>
 
-                            </div>
-                            <div class="col-0 col-sm-1"> </div>
+                                <div class="text-center mt-3 mb-4" name="submit">
+                                    <button class="btn btn-dark px-4" type="submit">Asignar tarea</button>
+                                </div>
+
+                            </form>
+
                         </div>
+                        <div class="col-0 col-sm-1"></div>
                     </div>
-
-
-
-
-
-
-
                 </div>
+
+
             </div>
+        </div>
 
 
-
-
-        </div> <!--End main container-->
     </div> <!--End main container-->
-    
+</div> <!--End main container-->
+
 </body>
 </html>
