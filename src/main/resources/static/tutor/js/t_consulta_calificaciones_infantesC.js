@@ -44,7 +44,7 @@ $.each(registro, function(key,val){
     $("#tabla-de-calificaciones tbody").append(row);
     row.append($("<td>").addClass("text-center").text(val.descripcion));
     row.append($("<td>").addClass("text-center").text(fechaString));
-    row.append($("<td>").addClass("text-center").text(val.calificacion));
+    //row.append($("<td>").addClass("text-center").text(val.calificacion));
     //Imprimiendo los íconos de font awesome 
     var iconos = ""; // Variable auxiliar para almacenar los íconos
     for (var i = 1; i <= val.calificacion; i++) {
