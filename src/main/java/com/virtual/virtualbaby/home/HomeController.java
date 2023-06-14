@@ -9,4 +9,6 @@ public class HomeController {
     public String home() {
         return "redirect:/pages/general/g_login.html";
     }
+
+
 }

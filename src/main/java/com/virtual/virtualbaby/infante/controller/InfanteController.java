@@ -13,10 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -45,6 +42,14 @@ public class InfanteController {
         return ResponseEntity.ok(infantes);
     }
 
+    @PreAuthorize("hasAuthority('TRABAJADOR_SOCIAL')")
+    @PostMapping("/")
+    public ResponseEntity<Infante> createInfante(@RequestBody Infante infante) {
+        Infante savedInfante = infanteRepository.save(infante);
+        return new ResponseEntity<>(savedInfante, HttpStatus.CREATED);
+    }
+
+
     @GetMapping("/{infanteId}/reportes/{fecha}")
     @PreAuthorize("hasAuthority('TUTOR')")
     public ResponseEntity<List<ReporteDiario>> getReportesDelInfante(HttpServletRequest request, @PathVariable Long infanteId, @PathVariable LocalDate fecha) {
@@ -70,5 +75,7 @@ public class InfanteController {
 
         return ResponseEntity.ok(reportes);
     }
+
+
 }
 

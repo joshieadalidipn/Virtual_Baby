@@ -16,15 +16,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/designado")
+@RequestMapping("/tutores")
 @RequiredArgsConstructor
-public class DesignadoController {
+public class TutorController {
     private final TutorRepository tutorRepository;
     private final InfanteRepository infanteRepository;
     private final JwtService jwtService;
 
-
-    @GetMapping("/infantes")
+    @GetMapping("/self/infantes")
     public ResponseEntity<List<Infante>> getInfantesByTutor(HttpServletRequest request) {
         String jwt = jwtService.extractJwtFromRequest(request);
         String email = jwtService.extractEmail(jwt);
