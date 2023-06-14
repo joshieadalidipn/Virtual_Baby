@@ -37,7 +37,8 @@
                 </div>
                 <div class="col-3 text-end">
                     <div class="d-flex h-100 align-items-center justify-content-end">
-                        <a href="#" class="btn btn-dark me-4 m-1 px-3 py-3 d-flex justify-content-center align-items-center">
+                        <a class="btn btn-dark me-4 m-1 px-3 py-3 d-flex justify-content-center align-items-center"
+                           href="#">
                             <i class="fa-solid fa-house" style="color: #ffffff;"></i>
                         </a>
                     </div>
@@ -45,59 +46,30 @@
             </div>
         </div> <!--End user name bar-->
 
-        <div id="cuerpo_bg" class="mt-2 container-fluid g-0"> <!--Begin main container-->
-            <div id="barra_arriba" class="row"> <!--Begin creacion de barra de enlaces superior-->
-                <div class="col-0 col-sm-1 text-start">
-                </div>
-                <div class="col-11 col-sm-10 ms-1 ms-sm-0 text-start">
-                    <div id="Barra superior" class="mt-0 mb-3 container-fluid g-0">
-                        <div class="row ">
-                            <!--Agregando los botones para moverse dentro de las cadenas permitidas-->
-                            <div class="col-3"><a href="#"
-                                class="btn btn-secondary me-0 me-sm-4 m-1 px-3 py-1 d-flex justify-content-center align-items-center"><i
-                                    class="fa-solid fa-people-group d-md-none d-inline" style="color: #ffffff;"></i>
-                                <p
-                                    class="text-white m-0 px-0 py-0 d-none d-md-flex justify-content-center align-items-center">
-                                    LISTA DE INFANTES</p>
-                            </a> </div>
+        <div class="row" id="barra_arriba"></div>
+        <script>
+            window.addEventListener('DOMContentLoaded', function () {
+                fetch('barra_arriba.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('barra_arriba').innerHTML = data;
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+            });
+        </script>
 
-                            <div class="col-3"><a href="#"
-                                class="btn btn-secondary me-0 me-sm-4 m-1 px-3 py-1 d-flex justify-content-center align-items-center"><i
-                                    class="fa-solid fa-people-group d-md-none d-inline" style="color: #ffffff;"></i>
-                                <p
-                                    class="text-white m-0 px-0 py-0 d-none d-md-flex justify-content-center align-items-center">
-                                    AREA DE REPORTES</p>
-                            </a> </div>
-
-                            <div class="col-3"><a href="#"
-                                class="btn btn-secondary me-0 me-sm-4 m-1 px-3 py-1 d-flex justify-content-center align-items-center"><i
-                                    class="fa-solid fa-people-group d-md-none d-inline" style="color: #ffffff;"></i>
-                                <p
-                                    class="text-white m-0 px-0 py-0 d-none d-md-flex justify-content-center align-items-center">
-                                    CALENDARIO GRUPAL</p>
-                            </a> </div>
-
-                            <div class="col-3"><a href="#"
-                                class="btn btn-secondary me-0 me-sm-4 m-1 px-3 py-1 d-flex justify-content-center align-items-center"><i
-                                    class="fa-solid fa-people-group d-md-none d-inline" style="color: #ffffff;"></i>
-                                <p
-                                    class="text-white m-0 px-0 py-0 d-none d-md-flex justify-content-center align-items-center">
-                                    AREA DE TAREAS</p>
-                            </a> </div>
-                        </div>
-                    </div>
-                </div>
-            </div> <!--End creación de botones para la barra superior-->
-
-            <div id="area_cuerpo" class="row"> <!--Mediante la clase row crea una fila que contendrá columnas según el sistema de columnas de Boostrap-->
-                <div class="col-0 col-sm-1 text-start">
-                </div>
-                <div class="col-11 col-sm-10 ms-1 ms-sm-0 text-center bg-blue shadow-sm rounded-5" > <!--Crea una columna dentro de la fila que ocupará 11 columnas del sistema en dispositivos de 
+        <div class="row" id="area_cuerpo">
+            <!--Mediante la clase row crea una fila que contendrá columnas según el sistema de columnas de Boostrap-->
+            <div class="col-0 col-sm-1 text-start">
+            </div>
+            <div class="col-11 col-sm-10 ms-1 ms-sm-0 text-center bg-blue shadow-sm rounded-5"> <!--Crea una columna dentro de la fila que ocupará 11 columnas del sistema en dispositivos de
                 tamaño pequeño o mayor, además de generar un redondeo de 5 pixeles de acuerdo con la clase rounded 5-->
-                    <div class="row mb-3">
-                        <div class="col-sm-2 col-md-6 col-xl-12">
-                            <h2 class="text-center fw-bold d-inline ms-4">REDACTAR RECADO</h2>
-                        </div>
+                <div class="row mb-3">
+                    <div class="col-sm-2 col-md-6 col-xl-12">
+                        <h2 class="text-center fw-bold d-inline ms-4">REDACTAR RECADO</h2>
+                    </div>
                     </div>
                     <br>
                     <div class="row mb-3">
