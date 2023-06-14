@@ -22,7 +22,6 @@ public class SubreporteObservaciones {
     @ManyToOne
     @JoinColumn(nullable = false)
     private ReporteDiario reporteDiario;
-    @Column(nullable = false)
     private LocalTime hora;
     private String descripcion;
 }

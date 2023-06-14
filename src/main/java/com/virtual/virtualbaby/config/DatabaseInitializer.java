@@ -9,6 +9,7 @@ import com.virtual.virtualbaby.infante.repository.SalonRepository;
 import com.virtual.virtualbaby.reporte.model.ReporteDiario;
 import com.virtual.virtualbaby.reporte.model.SubreporteComida;
 import com.virtual.virtualbaby.reporte.model.SubreporteEvacuacion;
+import com.virtual.virtualbaby.reporte.model.SubreporteObservaciones;
 import com.virtual.virtualbaby.reporte.repository.ReporteDiarioRepository;
 import com.virtual.virtualbaby.reporte.repository.SubreporteComidaRepository;
 import com.virtual.virtualbaby.reporte.repository.SubreporteEvacuacionRepository;
@@ -98,9 +99,11 @@ public class DatabaseInitializer implements CommandLineRunner {
         reporteDiarioRepository.save(reporteDiario2);
 
         SubreporteComida subreporteComida1 = SubreporteComida.builder().comida("Deliciosa").cantidad(3).reporteDiario(reporteDiario1).build();
-        SubreporteEvacuacion subreporteEvacuacion1 = SubreporteEvacuacion.builder().tipoEvacuacion("Excelente").hora(LocalTime.now()).build();
+        SubreporteEvacuacion subreporteEvacuacion1 = SubreporteEvacuacion.builder().tipoEvacuacion("Excelente").hora(LocalTime.now()).reporteDiario(reporteDiario1).build();
+        SubreporteObservaciones subreporteObservaciones1 = SubreporteObservaciones.builder().descripcion("Excelente").hora(LocalTime.now()).reporteDiario(reporteDiario1).build();
         subreporteComidaRepository.save(subreporteComida1);
-        //subreporteEvacuacionRepository.save(subreporteEvacuacion1);
+        subreporteEvacuacionRepository.save(subreporteEvacuacion1);
+        subreporteObservacionesRepository.save(subreporteObservaciones1);
     }
 
 }
