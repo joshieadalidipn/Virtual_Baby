@@ -5,19 +5,21 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id') || '1'; // Obtener el valor del parámetro "id" del URL, o usar el valor predeterminado "1" si no está presente
+
     const form = document.querySelector('form');
     form.addEventListener('submit', function (e) {
         e.preventDefault();
         const fecha = document.getElementById('fecha_reporte').value;
-        getInfanteReporte(fecha, jwt)
+        getInfanteReporte(id, fecha, jwt) // Pasar el parámetro "id" a la función getInfanteReporte
             .then(data => fillReport(data))
             .catch(error => console.error('Error:', error));
     });
 });
 
-
-async function getInfanteReporte(fecha, jwt) {
-    const response = await fetch(`/infantes/1/reportes/${fecha}`, {
+async function getInfanteReporte(id, fecha, jwt) { // Agregar el parámetro "id" a la función getInfanteReporte
+    const response = await fetch(`/infantes/${id}/reportes/${fecha}`, { // Usar el parámetro "id" en la URL de la consulta
         headers: {
             'Authorization': `Bearer ${jwt}`
         }
@@ -29,6 +31,7 @@ async function getInfanteReporte(fecha, jwt) {
 
     return await response.json();
 }
+
 
 function fillReport(data) {
     const tablaComidas = document.getElementById('tabla_comidas');

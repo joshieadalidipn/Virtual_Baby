@@ -52,7 +52,6 @@ function createInfanteRow(infante) {
     return row;
 }
 
-
 const createFoodButton = (id) => {
     // Crear botón
     const btn = document.createElement("a");
@@ -67,6 +66,12 @@ const createFoodButton = (id) => {
 
     // Agregar el ícono y el texto al botón
     btn.appendChild(icon);
+
+    // Agregar controlador de eventos
+    btn.addEventListener("click", () => {
+        const url = "d_consulta_reporte.html?id=" + id;
+        window.location.href = url;
+    });
 
     return btn;
 };

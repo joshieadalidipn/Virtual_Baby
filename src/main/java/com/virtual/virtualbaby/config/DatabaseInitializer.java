@@ -101,9 +101,18 @@ public class DatabaseInitializer implements CommandLineRunner {
         SubreporteComida subreporteComida1 = SubreporteComida.builder().comida("Deliciosa").cantidad(3).reporteDiario(reporteDiario1).build();
         SubreporteEvacuacion subreporteEvacuacion1 = SubreporteEvacuacion.builder().tipoEvacuacion("Excelente").hora(LocalTime.now()).reporteDiario(reporteDiario1).build();
         SubreporteObservaciones subreporteObservaciones1 = SubreporteObservaciones.builder().descripcion("Excelente").hora(LocalTime.now()).reporteDiario(reporteDiario1).build();
+
+        SubreporteComida subreporteComida2 = SubreporteComida.builder().comida("NO fue la gran cosa").cantidad(6).reporteDiario(reporteDiario2).build();
+        SubreporteEvacuacion subreporteEvacuacion2 = SubreporteEvacuacion.builder().tipoEvacuacion("Más o menos").hora(LocalTime.now()).reporteDiario(reporteDiario2).build();
+        SubreporteObservaciones subreporteObservaciones2 = SubreporteObservaciones.builder().descripcion("Quizás").hora(LocalTime.now()).reporteDiario(reporteDiario2).build();
+
         subreporteComidaRepository.save(subreporteComida1);
         subreporteEvacuacionRepository.save(subreporteEvacuacion1);
         subreporteObservacionesRepository.save(subreporteObservaciones1);
+
+        subreporteComidaRepository.save(subreporteComida2);
+        subreporteEvacuacionRepository.save(subreporteEvacuacion2);
+        subreporteObservacionesRepository.save(subreporteObservaciones2);
     }
 
 }
