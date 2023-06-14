@@ -1,4 +1,4 @@
-package com.virtual.virtualbaby.user.model;
+package com.virtual.virtualbaby.usuario.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -9,15 +9,15 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDate;
 
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
+@Builder
 public class Usuario {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @GeneratedValue
+    private Long id;
     private String nombre;
     private String primerApellido;
     private String segundoApellido;

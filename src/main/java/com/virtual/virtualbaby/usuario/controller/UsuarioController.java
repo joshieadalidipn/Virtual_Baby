@@ -1,12 +1,11 @@
-package com.virtual.virtualbaby.user.controller;
+package com.virtual.virtualbaby.usuario.controller;
 
 import com.virtual.virtualbaby.auth.security.JwtService;
-import com.virtual.virtualbaby.user.model.Usuario;
-import com.virtual.virtualbaby.user.repository.UsuarioRepository;
+import com.virtual.virtualbaby.usuario.model.Usuario;
+import com.virtual.virtualbaby.usuario.repository.CapitalHumanoRepository;
+import com.virtual.virtualbaby.usuario.repository.UsuarioRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -14,19 +13,25 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.Optional;
+
 @RestController
 @AllArgsConstructor
-@RequestMapping("/usuario")
+@RequestMapping("/usuarios")
 public class UsuarioController {
     private final JwtService jwtService;
     UsuarioRepository usuarioRepository;
-    private static final Logger logger = LoggerFactory.getLogger(CapitalHumanoController.class);
+    public final CapitalHumanoRepository capitalHumanoRepository;
 
-    @GetMapping("/datos")
-    @PreAuthorize("hasAuthority('USUARIO')")
+    @PreAuthorize("hasAuthority('CAPITAL_HUMANO')")
+    @GetMapping("/")
+    public ResponseEntity<List<Usuario>> getUsers() {
+        return ResponseEntity.ok(usuarioRepository.findAll());
+    }
+
+    @GetMapping("/self")
     public ResponseEntity<Usuario> getData(HttpServletRequest request) {
-        logger.info("Se recibió una petición en /usuario");
         String jwt = jwtService.extractJwtFromRequest(request);
         String email = jwtService.extractEmail(jwt);
 

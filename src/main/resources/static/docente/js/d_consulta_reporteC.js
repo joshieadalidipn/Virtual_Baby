@@ -1,80 +1,55 @@
 document.addEventListener("DOMContentLoaded", function () {
-
-  const comidas = [
-    {
-      "id": 1,
-      "hora": "01:02",
-      "alimento": "Manzana",
-      "cantidadIngerida": "Todo"
-    },
-    {
-      "id": 2,
-      "hora": "02:12",
-      "alimento": "Arroz",
-      "cantidadIngerida": "Nada"
-    },
-    {
-      "id": 3,
-      "hora": "10:23",
-      "alimento": "Pollo",
-      "cantidadIngerida": "Algo"
+    const jwt = localStorage.getItem('jwt');
+    if (!jwt) {
+        console.error("JWT no encontrado. El usuario necesita iniciar sesión.");
+        return;
     }
-  ];
 
-  const evacuaciones = [
-    {
-      "id": 1,
-      "hora": "01:02",
-      "tipo": "Pipi",
-      "obs": "Sin observaciones"
-    },
-    {
-      "id": 2,
-      "hora": "02:12",
-      "tipo": "Diarrea",
-      "obs": "Le da impulsos negativos"
-    },
-    {
-      "id": 3,
-      "hora": "10:23",
-      "tipo": "Popo",
-      "obs": "Fue morada"
-    }
-  ];
-
-  const observaciones = [
-    {
-      "id": 1,
-      "hora": "10:23",
-      "letras": "Se peleó",
-    },
-    {
-      "id": 2,
-      "hora": "10:23",
-      "letras": "Vomitó",
-    },
-    {
-      "id": 3,
-      "hora": "10:23",
-      "letras": "Se escapó del edificio",
-    }
-  ];
-
-  comidas.forEach(val => {
-    const row = document.createElement("tr");
-    row.innerHTML = `<td>${val.hora}</td><td>${val.alimento}</td><td>${val.cantidadIngerida}</td>`;
-    document.querySelector("#comidaprint tbody").appendChild(row);
-  });
-
-  evacuaciones.forEach(val => {
-    const row = document.createElement("tr");
-    row.innerHTML = `<td>${val.hora}</td><td>${val.tipo}</td><td>${val.obs}</td>`;
-    document.querySelector("#evaprint tbody").appendChild(row);
-  });
-
-  observaciones.forEach(val => {
-    const row = document.createElement("tr");
-    row.innerHTML = `<td>${val.hora}</td><td>${val.letras}</td>`;
-    document.querySelector("#obsprint tbody").appendChild(row);
-  });
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const fecha = document.getElementById('fecha_reporte').value;
+        getInfanteReporte(fecha, jwt)
+            .then(data => fillReport(data))
+            .catch(error => console.error('Error:', error));
+    });
 });
+
+
+async function getInfanteReporte(fecha, jwt) {
+    const response = await fetch(`/infantes/1/reportes/${fecha}`, {
+        headers: {
+            'Authorization': `Bearer ${jwt}`
+        }
+    });
+
+    if (!response.ok) {
+        throw new Error('Respuesta de red no fue ok');
+    }
+
+    return await response.json();
+}
+
+function fillReport(data) {
+    const tablaComidas = document.getElementById('tabla_comidas');
+    const tablaEvacuaciones = document.getElementById('tabla_evacuaciones');
+    const tablaObservaciones = document.getElementById('tabla_observaciones');
+    console.log(data);
+    // Limpiar las tablas
+    tablaComidas.getElementsByTagName('tbody')[0].innerHTML = '';
+    tablaEvacuaciones.getElementsByTagName('tbody')[0].innerHTML = '';
+    tablaObservaciones.getElementsByTagName('tbody')[0].innerHTML = '';
+
+    // Llenar las tablas
+    data[0].subreportesComida.forEach(subreporteComida => {
+        tablaComidas.getElementsByTagName('tbody')[0].innerHTML += `<tr><td>${subreporteComida.horaComida}</td><td>${subreporteComida.comida}</td><td>${subreporteComida.cantidad}</td></tr>`;
+    });
+
+    data[0].subreportesEvacuacion.forEach(evacuacion => {
+        tablaEvacuaciones.getElementsByTagName('tbody')[0].innerHTML += `<tr><td>${evacuacion.hora}</td><td>${evacuacion.tipoEvacuacion}</td><td>${evacuacion.observaciones}</td></tr>`;
+    });
+
+    data[0].subreportesObservaciones.forEach(anexo => {
+        tablaObservaciones.getElementsByTagName('tbody')[0].innerHTML += `<tr><td>${anexo.hora}</td><td>${anexo.descripcion}</td></tr>`;
+    });
+}

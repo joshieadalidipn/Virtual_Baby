@@ -23,10 +23,12 @@ public class SecurityConfiguration {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/", "/pages/**", "/auth/**", "/hello/**")
+                .requestMatchers("/**", "/auth/**", "/hello/**", "/favicon.ico")
                 .permitAll()
                 .requestMatchers("/infante")
                 .hasAnyAuthority("DOCENTE", "TUTOR")
+                .requestMatchers("/reporte")
+                .hasAuthority("TUTOR")
                 .anyRequest()
                 .authenticated()
                 .and()

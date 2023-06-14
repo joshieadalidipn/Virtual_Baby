@@ -1,5 +1,6 @@
 package com.virtual.virtualbaby.reporte.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,11 +16,12 @@ import java.time.LocalTime;
 @Entity
 public class SubreporteObservaciones {
     @Id
+    @GeneratedValue
     private Integer id;
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(nullable = false)
     private ReporteDiario reporteDiario;
-    @Column(nullable = false)
     private LocalTime hora;
     private String descripcion;
 }

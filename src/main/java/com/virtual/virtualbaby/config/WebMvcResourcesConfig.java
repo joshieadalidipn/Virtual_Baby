@@ -9,7 +9,13 @@ public class WebMvcResourcesConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/pages/**")
+        // Este manejador sigue manejando todas las URL que comienzan con /pages/
+        registry.addResourceHandler("/**")
                 .addResourceLocations("classpath:/static/");
+
+        // Este manejador maneja específicamente la URL /favicon.ico
+        registry.addResourceHandler("/favicon.ico")
+                .addResourceLocations("classpath:/static/favicon.ico");
     }
 }
+

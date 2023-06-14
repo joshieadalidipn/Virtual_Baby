@@ -1,17 +1,15 @@
 package com.virtual.virtualbaby.reporte.model;
 
 import com.virtual.virtualbaby.infante.model.Infante;
-import com.virtual.virtualbaby.user.model.Medico;
-import jakarta.persistence.Column;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import com.virtual.virtualbaby.usuario.model.Medico;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
 public class ReporteMedico {
     @Id
-    Integer id;
+    @GeneratedValue
+    Long id;
     @Column(nullable = false)
     LocalDate fecha;
     @Column(nullable = false)
