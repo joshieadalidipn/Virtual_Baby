@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/infante")
+@RequestMapping("/infantes")
 @AllArgsConstructor
 public class InfanteController {
     private final InfanteRepository infanteRepository;
@@ -45,8 +45,7 @@ public class InfanteController {
         return ResponseEntity.ok(infantes);
     }
 
-
-    @GetMapping("/reportes/{infanteId}/{fecha}")
+    @GetMapping("/{infanteId}/reportes/{fecha}")
     @PreAuthorize("hasAuthority('TUTOR')")
     public ResponseEntity<List<ReporteDiario>> getReportesDelInfante(HttpServletRequest request, @PathVariable Long infanteId, @PathVariable LocalDate fecha) {
         String jwt = jwtService.extractJwtFromRequest(request);
@@ -72,3 +71,4 @@ public class InfanteController {
         return ResponseEntity.ok(reportes);
     }
 }
+

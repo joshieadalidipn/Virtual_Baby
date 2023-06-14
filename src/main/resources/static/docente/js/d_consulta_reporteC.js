@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 async function getInfanteReporte(fecha, jwt) {
-    const response = await fetch(`/infante/reportes/1/${fecha}`, {
+    const response = await fetch(`/infantes/1/reportes/${fecha}`, {
         headers: {
             'Authorization': `Bearer ${jwt}`
         }
