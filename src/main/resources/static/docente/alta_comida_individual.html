@@ -18,13 +18,9 @@
             integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
             referrerpolicy="no-referrer"
             src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script src="../common/js/mostrar_datos.js"></script>
     <script src="js/d_alta_comidaindividualC.js"></script>
+    <script src="../common/js/mostrar_datos_usuario.js"></script>
     <title>Reporte Comida Individual</title>
-    <style>
-
-
-    </style>
 </head>
 
 <body class="bg-light g-0">
@@ -32,16 +28,15 @@
     <div class="mt-2 container-fluid g-0" id="cuerpo_bg">
         <div class="row" id="header"></div>
         <script>
-            window.addEventListener('DOMContentLoaded', function () {
-                fetch('header.html')
-                    .then(response => response.text())
-                    .then(data => {
-                        document.getElementById('header').innerHTML = data;
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                    });
-            });
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header').innerHTML = data;
+                    fetchUserData();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
         </script>
 
         <div class="row" name="area_cuerpo">
@@ -53,72 +48,58 @@
                 <div class="mt-3 container-fluid" id="Verdadero cuerpo_main">
 
                     <div class="container-fluid g-0" name="titulo">
-
                         <form>
                             <div class="row mb-3">
-
                                 <div class="col-5 col-sm-9">
                                     <h2 class=" text-center fw-bold d-none d-sm-inline ms-4"
-                                        id="nombreinfanteprint">REPORTE DE
-                                        *NOMBRE_CORTO_INFANTE*</h2>
+                                        id="nombreinfanteprint">
+                                        REPORTE DE *NOMBRE_CORTO_INFANTE*
+                                    </h2>
                                     <h2 class=" text-center fw-bold d-block d-sm-none">REPORTE</h2>
                                 </div>
-                                <div class="col-5 col-sm-2">
-
-                                </div>
-                                <div class="col-1 col-sm-1">
-
-                                </div>
+                                <div class="col-5 col-sm-2"></div>
+                                <div class="col-1 col-sm-1"></div>
                             </div>
                         </form>
-
-
                         <div class="container-fluid g-0" name="base-de-cuerpo-interno">
                             <div class="row ">
                                 <div class="col-0 col-sm-1"></div>
                                 <div class="col-12 col-sm-10" name="escribe-el-texto-aqui">
-
                                     <form>
-
                                         <div>
-
-                                            <p
-                                                    class="text-black m-0 py-0 d-none d-md-flex align-items-center justify-content-end titular">
-                                                MENU</p>
-
+                                            <p class="text-black m-0 py-0 d-none d-md-flex align-items-center justify-content-end titular">
+                                                MENU
+                                            </p>
                                         </div>
                                         <div class="mt-3 mb-4" name="comidas">
-
                                             <div class="row">
                                                 <div class="col-1 d-flex align-items-center justify-content-center">
-                                                    <div><i class="fa-solid fa-burger"
-                                                            style="color: #000000;"></i></div>
+                                                    <div>
+                                                        <i class="fa-solid fa-burger" style="color: #000000;"></i>
+                                                    </div>
                                                 </div>
                                                 <div class="col-11 d-flex align-items-center">
-                                                        <textarea class="form-control" id="menuf" name="menuf"
-                                                                  placeholder="Ingresa el menu del infante"></textarea>
+                                                    <label for="menuf"></label>
+                                                    <textarea class="form-control" id="menuf" name="menuf"
+                                                              placeholder="Ingresa el menu del infante"></textarea>
                                                 </div>
                                             </div>
-
-
                                         </div>
-
 
                                         <div>
-
-                                            <p
-                                                    class="text-black m-0 py-0 d-none d-md-flex align-items-center justify-content-end titular">
-                                                CANTIDAD INGERIDA</p>
-
+                                            <p class="text-black m-0 py-0 d-none d-md-flex align-items-center justify-content-end titular">
+                                                CANTIDAD INGERIDA
+                                            </p>
                                         </div>
                                         <div class="mt-3 mb-4" name="cantidad_ingerida">
-
                                             <div class="row">
                                                 <div class="col-1 d-flex align-items-center justify-content-center">
-                                                    <div><i class="fa-solid fa-utensils"
-                                                            style="color: #000000;"></i></div>
+                                                    <div>
+                                                        <i class="fa-solid fa-utensils" style="color: #000000;"></i>
+                                                    </div>
                                                 </div>
                                                 <div class="col-11 d-flex align-items-center">
+                                                    <label for="cantf"></label>
                                                     <select class="form-select" id="cantf">
                                                         <option>Todo</option>
                                                         <option>Algo</option>
@@ -126,53 +107,41 @@
                                                     </select>
                                                 </div>
                                             </div>
-
                                         </div>
 
                                         <div>
-
-                                            <p
-                                                    class="text-black m-0 py-0 d-none d-md-flex align-items-center justify-content-end titular">
-                                                OBSERVACIONES</p>
-
+                                            <p class="text-black m-0 py-0 d-none d-md-flex align-items-center justify-content-end titular">
+                                                OBSERVACIONES
+                                            </p>
                                         </div>
                                         <div class="mt-3 mb-4" name="observaciones generales">
-
                                             <div class="row">
                                                 <div class="col-1 d-flex align-items-center justify-content-center">
-                                                    <div><i class="fa-solid fa-face-smile"
-                                                            style="color: #000000;"></i></div>
+                                                    <div>
+                                                        <i class="fa-solid fa-face-smile" style="color: #000000;"></i>
+                                                    </div>
                                                 </div>
                                                 <div class="col-11 d-flex align-items-center">
-                                                        <textarea class="form-control" id="obsf" name="obsf"
-                                                                  placeholder="Sin observaciones"></textarea>
+                                                    <label for="obsf"></label>
+                                                    <textarea class="form-control" id="obsf" name="obsf"
+                                                              placeholder="Sin observaciones"></textarea>
                                                 </div>
                                             </div>
-
                                         </div>
-
                                         <div class="text-center mt-3 mb-4" name="submit">
                                             <button class="btn btn-dark px-4" type="submit">Enviar</button>
                                         </div>
-
                                     </form>
-
                                 </div>
                                 <div class="col-0 col-sm-1"></div>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             </div>
-            <div class="col-0 col-sm-1 text-end">
-            </div>
+            <div class="col-0 col-sm-1 text-end"></div>
         </div>
     </div>
 </div>
-</div>
-
 </body>
-
 </html>
