@@ -14,10 +14,7 @@ import com.virtual.virtualbaby.reporte.repository.ReporteDiarioRepository;
 import com.virtual.virtualbaby.reporte.repository.SubreporteComidaRepository;
 import com.virtual.virtualbaby.reporte.repository.SubreporteEvacuacionRepository;
 import com.virtual.virtualbaby.reporte.repository.SubreporteObservacionesRepository;
-import com.virtual.virtualbaby.usuario.model.Docente;
-import com.virtual.virtualbaby.usuario.model.TrabajadorSocial;
-import com.virtual.virtualbaby.usuario.model.Tutor;
-import com.virtual.virtualbaby.usuario.model.Usuario;
+import com.virtual.virtualbaby.usuario.model.*;
 import com.virtual.virtualbaby.usuario.repository.*;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
@@ -87,6 +84,7 @@ public class DatabaseInitializer implements CommandLineRunner {
         trabajadorSocialRepository.save(TrabajadorSocial.builder().usuario(usuario1).build());
         Tutor tutor1 = tutorRepository.save(Tutor.builder().usuario(usuario1).build());
         docenteRepository.save(Docente.builder().usuario(usuario1).build());
+        capitalHumanoRepository.save(CapitalHumano.builder().usuario(usuario1).build());
         Infante infante1 = Infante.builder().nombre("Juan").primerApellido("Pérez").segundoApellido("Sánchez").grupo(grupo1).tutor(tutor1).build();
         Infante infante2 = Infante.builder().nombre("Juana").primerApellido("Pérez").segundoApellido("Sánchez").grupo(grupo2).tutor(tutor1).build();
 
@@ -98,7 +96,9 @@ public class DatabaseInitializer implements CommandLineRunner {
         reporteDiarioRepository.save(reporteDiario1);
         reporteDiarioRepository.save(reporteDiario2);
 
-        SubreporteComida subreporteComida1 = SubreporteComida.builder().comida("Deliciosa").cantidad(3).reporteDiario(reporteDiario1).build();
+        SubreporteComida subreporteComida11 = SubreporteComida.builder().comida("Deliciosa").cantidad(3).reporteDiario(reporteDiario1).build();
+        SubreporteComida subreporteComida12 = SubreporteComida.builder().comida("Muy rica").cantidad(2).reporteDiario(reporteDiario1).build();
+
         SubreporteEvacuacion subreporteEvacuacion1 = SubreporteEvacuacion.builder().tipoEvacuacion("Excelente").hora(LocalTime.now()).reporteDiario(reporteDiario1).build();
         SubreporteObservaciones subreporteObservaciones1 = SubreporteObservaciones.builder().descripcion("Excelente").hora(LocalTime.now()).reporteDiario(reporteDiario1).build();
 
@@ -106,7 +106,8 @@ public class DatabaseInitializer implements CommandLineRunner {
         SubreporteEvacuacion subreporteEvacuacion2 = SubreporteEvacuacion.builder().tipoEvacuacion("Más o menos").hora(LocalTime.now()).reporteDiario(reporteDiario2).build();
         SubreporteObservaciones subreporteObservaciones2 = SubreporteObservaciones.builder().descripcion("Quizás").hora(LocalTime.now()).reporteDiario(reporteDiario2).build();
 
-        subreporteComidaRepository.save(subreporteComida1);
+        subreporteComidaRepository.save(subreporteComida11);
+        subreporteComidaRepository.save(subreporteComida12);
         subreporteEvacuacionRepository.save(subreporteEvacuacion1);
         subreporteObservacionesRepository.save(subreporteObservaciones1);
 

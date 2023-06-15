@@ -1,11 +1,8 @@
 .custom-table tbody tr:hover {
     outline: none;
-  }
-
-
+}
 
 .titular {
     font-size: larger;
     font-weight: bold;
-
 }
