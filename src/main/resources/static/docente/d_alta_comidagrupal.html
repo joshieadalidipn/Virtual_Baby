@@ -25,29 +25,14 @@
 
 <body class="bg-light g-0">
 <div class="container-fluid mt-2 ms-2 g-0" id="texto_bg">
-    <div class="container-fluid g-0" id="barra_superior_bg">
-        <div class="row">
-            <div class="col-9 text-start ">
-                <h1 class="mt-3 mt-sm-0" id="nombreusuarioprint"> NOMBRE DE USUARIO </h1>
-            </div>
-            <div class="col-3 text-end">
-                <div class="d-flex h-100 align-items-center justify-content-end">
-                    <a class="btn btn-dark me-4 m-1 px-3 py-3 d-flex justify-content-center align-items-center"
-                       href="#">
-                        <i class="fa-solid fa-house" style="color: #ffffff;"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="mt-2 container-fluid g-0" id="cuerpo_bg">
-
-        <div class="row" id="barra_arriba"></div>
+        <div class="row" id="header"></div>
         <script>
             window.addEventListener('DOMContentLoaded', function () {
-                fetch('barra_arriba.html')
+                fetch('header.html')
                     .then(response => response.text())
                     .then(data => {
-                        document.getElementById('barra_arriba').innerHTML = data;
+                        document.getElementById('header').innerHTML = data;
                     })
                     .catch(error => {
                         console.error('Error:', error);
