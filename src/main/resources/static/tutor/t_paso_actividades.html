@@ -19,24 +19,15 @@
             referrerpolicy="no-referrer"
             src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="../common/js/mostrar_datos.js"></script>
-    <title>Area de tarea</title>
+    <title>Area de Actividades</title>
 </head>
 
 <body class="bg-light g-0">
 <div class="container-fluid mt-2 ms-2 g-0" id="texto_bg">
     <div class="mt-2 container-fluid g-0" id="cuerpo_bg">
         <div class="row" id="header"></div>
-        <script>
-            window.addEventListener('DOMContentLoaded', function () {
-                fetch('header.html')
-                    .then(response => response.text())
-                    .then(data => {
-                        document.getElementById('header').innerHTML = data;
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                    });
-            });
+        <script id="header">
+            
         </script>
 
         <div class="row" name="area_cuerpo">
@@ -53,9 +44,9 @@
                             <div class="row mb-3">
 
                                 <div class="col-12 col-sm-9">
-                                    <h2 class=" text-center fw-bold d-none d-sm-inline ms-4">AREA DE TAREAS
+                                    <h2 class=" text-center fw-bold d-none d-sm-inline ms-4">AREA DE ACTIVIDADES
                                     </h2>
-                                    <h2 class=" text-center fw-bold d-block d-sm-none">AREA DE TAREAS</h2>
+                                    <h2 class=" text-center fw-bold d-block d-sm-none">AREA DE ACTIVIDADES</h2>
                                 </div>
                             </div>
                         </form>
@@ -66,12 +57,12 @@
                                 <div class="col-0 col-sm-1"></div>
                                 <div class="col-12 col-sm-10" name="escribe-el-texto-aqui">
 
-                                    <div class="container-fluid g-0 mt-3 mb-4" id="anuncio">
+                                    <div class="container-fluid g-0 mt-3 mb-4" id="actividades">
                                         <div class="row ">
                                             <div class="col-0"></div>
                                             <div class="col-5 d-flex align-items-center justify-content-end">
                                                 <label class="form-label ms-3 mt-1 mt-sm-0 titular2"
-                                                       for="tutorf">ANUNCIO</label>
+                                                       for="tutorf">ACTIVIDADES</label>
                                             </div>
                                             <div class="col-7  d-flex align-items-center justify-content-center">
                                                 <a class="btn btn-dark" href="#" id="tutorf">
@@ -83,12 +74,12 @@
                                         </div>
                                     </div>
 
-                                    <div class="container-fluid g-0 mt-3 mb-4" id="recado">
+                                    <div class="container-fluid g-0 mt-3 mb-4" id="tareas">
                                         <div class="row ">
                                             <div class="col-0"></div>
                                             <div class="col-5 d-flex align-items-center justify-content-end">
                                                 <label class="form-label ms-3 mt-1 mt-sm-0 titular2"
-                                                       for="tutorf">RECADO</label>
+                                                       for="tutorf">TAREAS</label>
                                             </div>
                                             <div class="col-7  d-flex align-items-center justify-content-center">
                                                 <a class="btn btn-dark" href="#" id="tutorf">
@@ -100,58 +91,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="container-fluid g-0 mt-3 mb-4" id="actividad">
-                                        <div class="row ">
-                                            <div class="col-0"></div>
-                                            <div class="col-5 d-flex align-items-center justify-content-end">
-                                                <label class="form-label ms-3 mt-1 mt-sm-0 titular2"
-                                                       for="tutorf">ACTIVIDAD</label>
-                                            </div>
-                                            <div class="col-7  d-flex align-items-center justify-content-center">
-                                                <a class="btn btn-dark" href="#" id="tutorf">
-                                                    <i class="fa-solid fa-arrow-right fa-3x ms-2 me-2"
-                                                       style="color: #ffffff;"></i>
-                                                </a>
-                                            </div>
-                                            <div class="col-0"></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="container-fluid g-0 mt-3 mb-4" id="tarea">
-                                        <div class="row ">
-                                            <div class="col-0"></div>
-                                            <div class="col-5 d-flex align-items-center justify-content-end">
-                                                <label class="form-label ms-3 mt-1 mt-sm-0 titular2"
-                                                       for="tutorf">TAREA</label>
-                                            </div>
-                                            <div class="col-7  d-flex align-items-center justify-content-center">
-                                                <a class="btn btn-dark" href="#" id="tutorf">
-                                                    <i class="fa-solid fa-arrow-right fa-3x ms-2 me-2"
-                                                       style="color: #ffffff;"></i>
-                                                </a>
-                                            </div>
-                                            <div class="col-0"></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="container-fluid g-0 mt-3 mb-4" id="aviso">
-                                        <div class="row ">
-                                            <div class="col-0"></div>
-                                            <div class="col-5 d-flex align-items-center justify-content-end">
-                                                <label class="form-label ms-3 mt-1 mt-sm-0 titular2"
-                                                       for="tutorf">AVISO</label>
-                                            </div>
-                                            <div class="col-7  d-flex align-items-center justify-content-center">
-                                                <a class="btn btn-dark" href="#" id="tutorf">
-                                                    <i class="fa-solid fa-arrow-right fa-3x ms-2 me-2"
-                                                       style="color: #ffffff;"></i>
-                                                </a>
-                                            </div>
-                                            <div class="col-0"></div>
-                                        </div>
-                                    </div>
-
-
+                                                                        
                                 </div>
                                 <div class="col-0 col-sm-1"></div>
                             </div>
