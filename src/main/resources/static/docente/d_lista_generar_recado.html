@@ -35,16 +35,15 @@
     <div class="mt-2 container-fluid g-0" id="cuerpo_bg"> <!--Begin main container-->
         <div class="row" id="header"></div>
         <script>
-            window.addEventListener('DOMContentLoaded', function () {
-                fetch('header.html')
-                    .then(response => response.text())
-                    .then(data => {
-                        document.getElementById('header').innerHTML = data;
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                    });
-            });
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header').innerHTML = data;
+                    fetchUserData();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
         </script>
 
         <div class="row" id="area_cuerpo">

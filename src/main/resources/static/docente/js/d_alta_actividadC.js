@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }];
 
     // Función que crea un nuevo menú
-    
+
 
     // Función que crea un nuevo select de cantidad
     const createGrade = (id) => {

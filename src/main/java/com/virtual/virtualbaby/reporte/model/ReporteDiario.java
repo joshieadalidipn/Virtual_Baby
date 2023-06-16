@@ -29,9 +29,6 @@ public class ReporteDiario {
     private LocalTime horaEntrada;
     private LocalTime horaSalida;
 
-    @ElementCollection
-    private List<String> pertenencias;
-
     // Agregamos las relaciones con las entidades Subreporte
     @JsonManagedReference
     @OneToMany(mappedBy = "reporteDiario")
