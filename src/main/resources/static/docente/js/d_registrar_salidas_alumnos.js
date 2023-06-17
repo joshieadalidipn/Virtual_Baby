@@ -8,7 +8,7 @@ $(document).ready(()=>{
     var año = fechaActual.getFullYear();
     var fechaFormateada = dia + '/' + mes + '/' + año;
 
-    $("#fecha-registro-salidas").text(fechaFormateada);
+    $("#fecha-registro-salidas").text('Salida: '+fechaFormateada);
 
     alumnos = [
     {
