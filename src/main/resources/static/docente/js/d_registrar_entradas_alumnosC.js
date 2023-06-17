@@ -192,5 +192,7 @@ function marcarAsistencia() {
 // Asociar el evento click a los botones de casilla
 $(document).on("click", ".casilla-asistencia", marcarAsistencia);
 
+// Llamar a la función generarRegistros con la opción deseada
+    generarRegistros(opcionUsuario);
 
 })
