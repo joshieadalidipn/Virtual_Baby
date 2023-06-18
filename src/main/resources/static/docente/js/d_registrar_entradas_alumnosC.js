@@ -25,21 +25,21 @@ $(document).ready(()=>{
             "primer_apellido": "Gonzalez",
             "segundo_apellido": "Lopez",
             "nombres_infante": "Camila",
-            "grupo": "maternal B"
+            "grupo": "maternal A"
         },
         {
             "id_alumno": 50012,
             "primer_apellido": "Martinez",
             "segundo_apellido": "Ramirez",
             "nombres_infante": "Sebastian",
-            "grupo": "maternal C"
+            "grupo": "maternal A"
         },
         {
             "id_alumno": 50013,
             "primer_apellido": "Rodriguez",
             "segundo_apellido": "Vargas",
             "nombres_infante": "Valentina",
-            "grupo": "maternal D"
+            "grupo": "maternal A"
         },
         {
             "id_alumno": 50014,
@@ -53,21 +53,21 @@ $(document).ready(()=>{
             "primer_apellido": "Garcia",
             "segundo_apellido": "Hernandez",
             "nombres_infante": "Lucia",
-            "grupo": "maternal B"
+            "grupo": "maternal A"
         },
         {
             "id_alumno": 50016,
             "primer_apellido": "Perez",
             "segundo_apellido": "Gonzalez",
             "nombres_infante": "Benjamin",
-            "grupo": "maternal C"
+            "grupo": "maternal A"
         },
         {
             "id_alumno": 50017,
             "primer_apellido": "Sanchez",
             "segundo_apellido": "Rodriguez",
             "nombres_infante": "Emma",
-            "grupo": "maternal D"
+            "grupo": "maternal A"
         },
         {
             "id_alumno": 50018,
@@ -81,21 +81,21 @@ $(document).ready(()=>{
             "primer_apellido": "Romero",
             "segundo_apellido": "Flores",
             "nombres_infante": "Isabella",
-            "grupo": "maternal B"
+            "grupo": "maternal A"
         },
         {
             "id_alumno": 50020,
             "primer_apellido": "Ramirez",
             "segundo_apellido": "Romero",
             "nombres_infante": "Liam",
-            "grupo": "maternal C"
+            "grupo": "maternal A"
         },
         {
             "id_alumno": 50021,
             "primer_apellido": "Gomez",
             "segundo_apellido": "Vargas",
             "nombres_infante": "Mia",
-            "grupo": "maternal D"
+            "grupo": "maternal A"
         },
         {
             "id_alumno": 50022,
@@ -109,72 +109,38 @@ $(document).ready(()=>{
             "primer_apellido": "Hernandez",
             "segundo_apellido": "Jimenez",
             "nombres_infante": "Valeria",
-            "grupo": "maternal B"
+            "grupo": "maternal A"
         },
         {
             "id_alumno": 50024,
             "primer_apellido": "Lopez",
             "segundo_apellido": "Hernandez",
             "nombres_infante": "Alexander",
-            "grupo": "maternal C"
+            "grupo": "maternal A"
         },
         {
             "id_alumno": 50025,
             "primer_apellido": "Gonzalez",
             "segundo_apellido": "Lopez",
             "nombres_infante": "Sofia",
-            "grupo": "maternal D"
+            "grupo": "maternal A"
         }
     ];
 
     //Declarando una variable para guardar el valor seleccionado por el usuario 
     
-    
-    $('#grupo-asignar').change(function() {
-    var opcionSeleccionada = $(this).val();
-    opcionUsuario = $(this).val();
-    var textoNuevo = '';
-
-    switch (opcionSeleccionada) {
-        case 'maternal A':
-        textoNuevo = 'Maternal A';
-        generarRegistros(opcionSeleccionada);
-        break;
-        case 'maternal B':
-        textoNuevo = 'Maternal B';
-        generarRegistros(opcionSeleccionada);
-        break;
-        case 'maternal C':
-        textoNuevo = 'Maternal C';
-        generarRegistros(opcionSeleccionada);
-        break;
-        case 'maternal D':
-        textoNuevo = 'Maternal D';
-        generarRegistros(opcionSeleccionada);
-        break;
-        default:
-        textoNuevo = 'No se ha seleccionado ningun grupo';
-        break;
-    }
-
-    $('#titulo-registro-asistencia').text('Registro de asistencia: '+textoNuevo);
-    });
 
     // Función para marcar la asistencia y escribir la hora actual en el <th> correspondiente
 
    //Funcion para generar los elementos de la tabla según el valor de su tabla
-function generarRegistros(opcion){
+function generarRegistros(){
     $("#tabla-infantes-asistencia tbody").empty();
     $.each(alumnos, function(key,val){
-        if(val.grupo == opcionUsuario){
             var row = $("<tr>");
             $("#tabla-infantes-asistencia tbody").append(row);
             row.append($("<td>").addClass("text-center").text(val.nombres_infante + " " + val.primer_apellido + " " + val.segundo_apellido));
             row.append($("<td>").addClass("text-center").html(`<input type="checkbox" id="casilla-${val.id_alumno}" class="casilla-asistencia">`));
             row.append($("<th>").addClass("text-center hora-asistencia").text(""));
-        } else {
-            console.log('No se encontró coincidencia con el id');
-        }
     });
 }
 
@@ -193,6 +159,6 @@ function marcarAsistencia() {
 $(document).on("click", ".casilla-asistencia", marcarAsistencia);
 
 // Llamar a la función generarRegistros con la opción deseada
-    generarRegistros(opcionUsuario);
+    generarRegistros();
 
 })
