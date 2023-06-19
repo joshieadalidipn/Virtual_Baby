@@ -5,5 +5,5 @@ public enum Role {
     DOCENTE,
     MEDICO,
     CAPITAL_HUMANO,
-    TRABAJADOR_SOCIALx
+    TRABAJADOR_SOCIAL
 }
