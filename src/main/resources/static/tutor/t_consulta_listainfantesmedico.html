@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+          integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+          referrerpolicy="no-referrer" rel="stylesheet"/>
+    <link href="css/custom.css" rel="stylesheet">
+
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" rel="stylesheet">
+    <script crossorigin="anonymous"
+            integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+            referrerpolicy="no-referrer"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="../common/js/mostrar_datos_usuario.js"></script>
+    <script src="js/t_consulta_listainfantesmedicoC.js"></script>
+    <title>Lista De infantes</title>
+</head>
+
+<body class="bg-light g-0">
+<div class="container-fluid mt-2 ms-2 g-0" id="texto_bg">
+    <div class="mt-2 container-fluid g-0" id="cuerpo_bg">
+        <div class="row" id="header"></div>
+        <script>
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header').innerHTML = data;
+                    fetchUserData();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        </script>
+
+        <div class="row" name="area_cuerpo">
+            <div class="col-0 col-sm-1 text-start">
+            </div>
+            <div class="col-11 col-sm-10 ms-1 ms-sm-0 text-start bg-white shadow-sm rounded-5">
+
+
+                <div class="mt-3 container-fluid" id="Verdadero cuerpo_main">
+
+                    <div class="container-fluid g-0" name="titulo">
+
+                        <form>
+                            <div class="row mb-3">
+
+                                <div class="col-9">
+                                    <h2 class=" text-center fw-bold d-inline ms-4">LISTA DE INFANTES</h2>
+                                </div>
+                            </div>
+                        </form>
+
+
+                        <div class="container-fluid g-0" name="base-de-cuerpo-interno">
+                            <div class="row ">
+                                <div class="col-0 col-sm-1"></div>
+                                <div class="col-12 col-sm-10" name="escribe-el-texto-aqui">
+                                  
+
+                                    
+                                    <div class="mt-3 mb-4" name="observaciones generales">
+
+                                        <div class="row">
+                                            
+                                            <div class="col-4 d-flex align-items-center">
+                                                <select class="form-select" id="tipof">
+                                                    <option>3BM1</option>
+                                                    <option>1AD6</option>
+                                                    <option>2BV2</option>
+                                                </select>
+                                            </div>
+                                            
+                                            
+                                            <div class="col-7 d-flex align-items-center">
+                                                    <input type="text" class="form-control" id="notaf" name="notaf"
+                                                              placeholder="Buscar"></textarea>
+                                            </div>
+
+                                            <div class="col-1 d-flex align-items-center justify-content-center bg-black shadow-sm rounded-5">
+                                                <div><i class="fa-solid fa-magnifying-glass fa-1x"
+                                                        style="color: #ffffff;"></i></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                    <form>
+                                        <div name="comidas">
+                                            <table class="table table-hover custom-table" id="infantesprint">
+                                                <thead>
+                                                <tr>
+                                                    <th>Identificador</th>
+                                                    <th>Nombre</th>
+                                                    <th>Ver</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="col-8 text-center">
+
+                                            <button class="btn btn-dark mb-4 py-0 d-none d-md-flex align-items-center justify-content-end titular"
+                                                    type="submit">Enviar
+                                            </button>
+                                        </div>
+
+                                    </form>
+
+
+                                </div>
+                                <div class="col-0 col-sm-1"></div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-0 col-sm-1 text-end">
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
