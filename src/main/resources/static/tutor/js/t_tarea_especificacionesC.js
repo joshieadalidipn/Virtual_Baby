@@ -11,7 +11,6 @@ $(document).ready(function(){
     };
     var fechaString = tarea.fechaEntrega.toLocaleDateString("es-ES", { day: "2-digit", month: "2-digit", year: "numeric" });
     $("#nombre_tarea").text(tarea.nombreTarea);
-    $("#grupo_tarea").text(tarea.grupo);
     $("#instrucciones_tarea").text(tarea.intruccines);
     $("#fecha_entrega").text(fechaString);
 });

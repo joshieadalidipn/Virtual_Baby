@@ -6,12 +6,12 @@ $(document).ready(function () {
     var evento = {
         "fecha": "12/12/12",
         "descripcion": "Va a haber kermes",
-        "poster": "img/k.jpg"
+        "poster": "img/k2.jpg"
 
     }
 
 
-    var imagenHtml = "<img src='" + evento.poster + "' alt='Descripción de la imagen' class='d-block w-100'>";
+    var imagenHtml = "<img src='" + evento.poster + "' alt='Descripción de la imagen' class='d-block w-25'>";
     
     // Método append():
     $("#posterp").append(imagenHtml);

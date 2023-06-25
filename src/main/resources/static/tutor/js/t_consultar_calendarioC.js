@@ -30,7 +30,7 @@ $(document).ready(() => {
             "id_evento": 90004,
             "titulo": "Evento de día de campo",
             "id_usuario_aviso": 60004,
-            "fecha": new Date(2023, 5, 8),
+            "fecha": new Date(2023, 4, 8),
             "descripcion": "Queridos padres, nos complace invitarlos a nuestro evento anual de día de campo en el parque local. Será una oportunidad para disfrutar de actividades al aire libre y fortalecer los lazos familiares."
         },
         {
